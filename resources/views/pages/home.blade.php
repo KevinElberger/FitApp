@@ -7,7 +7,7 @@
     <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Grayrids">
-    <title>Pluto - Material UI Inspired Bootstrap Template</title>
+    <title>FitApp - Track and Log Your Workouts</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
@@ -24,7 +24,7 @@
 
 <div class="navbar navbar-invers menu-wrap">
     <div class="navbar-header text-center">
-        <a class="navbar-brand logo-right" href="javascript:void(0)"><i class="mdi-image-timelapse"></i>Pluto</a>
+        <a class="navbar-brand logo-right" href="javascript:void(0)"><i class="mdi-image-timelapse"></i>FitApp</a>
     </div>
     <ul class="nav navbar-nav main-navigation">
         <li class="active"><a href="#home">Home</a></li>
@@ -46,7 +46,7 @@
                 <div class="navbar navbar-inverse sticky-navigation navbar-fixed-top" role="navigation" data-spy="affix" data-offset-top="200">
                     <div class="container">
                         <div class="navbar-header">
-                            <a class="logo-left " href="index.html"><i class="mdi-image-timelapse"></i>Pluto</a>
+                            <a class="logo-left " href="/"><i class="mdi-image-timelapse"></i>FitApp</a>
                         </div>
                         <div class="navbar-right">
                             <button class="menu-icon"  id="open-button">
@@ -57,8 +57,8 @@
                 </div>
             </div>
             <div class="contents text-right">
-                <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">Pluto - Material UI Inspired Bootstrap Template</h1>
-                <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">Material Design Inspired HTML5 Bootstrap Template for Business and App</p>
+                <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms"><b>FitApp - Track and Log Your Workouts</b></h1>
+                <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">WEB APP DESIGNED TO HELP YOU REACH YOUR GOALS</p>
                 <a href="#why" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Download</a>
                 <a href="#features" class="btn btn-lg btn-border wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Learn More</a>
             </div>
@@ -168,7 +168,7 @@
             <div class="row">
 
                 <div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <img src="img/features/img1.png" alt="">
+                    <img src="" alt="">
                 </div>
 
                 <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
