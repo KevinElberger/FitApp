@@ -24,7 +24,7 @@
 
 <div class="navbar navbar-invers menu-wrap">
     <div class="navbar-header text-center">
-        <a class="navbar-brand logo-right" href="javascript:void(0)"><i class="mdi-image-timelapse"></i>FitApp</a>
+        <a class="navbar-brand logo-right" href="javascript:void(0)"><i class="mdi-image-timelapse"></i><b>FitApp</b></a>
     </div>
     <ul class="nav navbar-nav main-navigation">
         <li class="active"><a href="#home">Home</a></li>
@@ -46,7 +46,7 @@
                 <div class="navbar navbar-inverse sticky-navigation navbar-fixed-top" role="navigation" data-spy="affix" data-offset-top="200">
                     <div class="container">
                         <div class="navbar-header">
-                            <a class="logo-left " href="/"><i class="mdi-image-timelapse"></i>FitApp</a>
+                            <a class="logo-left " href="/"><i class="mdi-image-timelapse"></i><b>FitApp</b></a>
                         </div>
                         <div class="navbar-right">
                             <button class="menu-icon"  id="open-button">
@@ -59,7 +59,7 @@
             <div class="contents text-right">
                 <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms"><b>FitApp - Track and Log Your Workouts</b></h1>
                 <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">WEB APP DESIGNED TO HELP YOU REACH YOUR GOALS</p>
-                <a href="#why" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Download</a>
+                <a href="/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
                 <a href="#features" class="btn btn-lg btn-border wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Learn More</a>
             </div>
     </header>
@@ -67,20 +67,20 @@
     <section id="features" class="section">
         <div class="container">
             <div class="section-header">
-                <h1 class="section-title wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="100ms">App Features</h1>
-                <h2 class="section-subtitle wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">Who seeks after it and wants to have it</h2>
+                <h1 class="section-title wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="100ms">Site Features</h1>
+                <h2 class="section-subtitle wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">Why it helps to use FitApp</h2>
             </div>
             <div class="row">
 
                 <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <div class="features">
                         <div class="icon">
-                            <i class="mdi-action-settings"></i>
+                            <i class="mdi-action-assessment"></i>
                         </div>
                         <div class="features-text">
-                            <h4>Built-with Bootstrap 3.5.x</h4>
+                            <h4>Useful Workout Tracking</h4>
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                                FitApp provides an effective way to track your progress in the gym.
                             </p>
                         </div>
                     </div>
@@ -90,12 +90,12 @@
                 <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="450ms">
                     <div class="features">
                         <div class="icon">
-                            <i class="mdi-action-done-all"></i>
+                            <i class="mdi-editor-format-line-spacing"></i>
                         </div>
                         <div class="features-text">
-                            <h4>Material Design</h4>
+                            <h4>See the Progress</h4>
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                                Graphing capabilities provide visual rewards for your progress.
                             </p>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                         <div class="features-text">
                             <h4>Clean and Refreshing</h4>
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                                FitApp's fresh design removes unnecessary clutter for users.
                             </p>
                         </div>
                     </div>
@@ -162,37 +162,37 @@
         </div>
     </section>
 
-    <section id="why" class="section">
-        <div class="container">
+    {{--<section id="why" class="section">--}}
+        {{--<div class="container">--}}
 
-            <div class="row">
+            {{--<div class="row">--}}
 
-                <div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <img src="" alt="">
-                </div>
+                {{--<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">--}}
+                    {{--<img src="" alt="">--}}
+                {{--</div>--}}
 
-                <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <div class="pull-left content">
-                        <h2>This is Why You Will <br> Love Pluto</h2>
-                        <p>
-                            Material UI Bootstrap APP and Business Template orem ipsum <br>
-                            dolor sit amet, consectetur adipIusto quisquam idodit dolore inventore <br>
-                            eumetur adipIusto quisquam idodit dolore inventore eum'
-                            dolor sit amet, consectetur adipIusto quisquam idodit dolore inventore <br>
-                        </p>
-                        <ul class="list-item">
-                            <li><i class="mdi-action-done"></i>OffCanvas Menu</li>
-                            <li><i class="mdi-action-done"></i>Based on Material design</li>
-                            <li><i class="mdi-action-done"></i>Free to Use</li>
-                            <li><i class="mdi-action-done"></i>Built-with Bootstrap 3.5.x</li>
-                            <li><i class="mdi-action-done"></i>Refreshing Designß</li>
-                        </ul>
-                        <a href="javascript:void(0)" class="btn btn-lg btn-primary">Downoad Now!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                {{--<div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">--}}
+                    {{--<div class="pull-left content">--}}
+                        {{--<h2>Sign Up With Us!</h2>--}}
+                        {{--<p>--}}
+                            {{--Material UI Bootstrap APP and Business Template orem ipsum <br>--}}
+                            {{--dolor sit amet, consectetur adipIusto quisquam idodit dolore inventore <br>--}}
+                            {{--eumetur adipIusto quisquam idodit dolore inventore eum'--}}
+                            {{--dolor sit amet, consectetur adipIusto quisquam idodit dolore inventore <br>--}}
+                        {{--</p>--}}
+                        {{--<ul class="list-item">--}}
+                            {{--<li><i class="mdi-action-done"></i>OffCanvas Menu</li>--}}
+                            {{--<li><i class="mdi-action-done"></i>Based on Material design</li>--}}
+                            {{--<li><i class="mdi-action-done"></i>Free to Use</li>--}}
+                            {{--<li><i class="mdi-action-done"></i>Built-with Bootstrap 3.5.x</li>--}}
+                            {{--<li><i class="mdi-action-done"></i>Refreshing Designß</li>--}}
+                        {{--</ul>--}}
+                        {{--<a href="javascript:void(0)" class="btn btn-lg btn-primary">Log In</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
 
     <section id="main-features" class="section main-feature-gray">
         <div class="container">
@@ -636,7 +636,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <h2 class="section-title">That's Where We Are</h2>
+                    <h2 class="section-title">Where We Are</h2>
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="info">
@@ -644,7 +644,7 @@
                                     <i class="mdi-maps-map"></i>
                                 </div>
                                 <h4>Location</h4>
-                                <p>NSW, Sydney, Australia</p>
+                                <p>Los Angeles, California</p>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
@@ -653,7 +653,7 @@
                                     <i class="mdi-content-mail"></i>
                                 </div>
                                 <h4>Email</h4>
-                                <p>office@graygrids.com</p>
+                                <p>kevelberger@gmail.com</p>
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -663,7 +663,7 @@
                                     <i class="mdi-action-settings-phone"></i>
                                 </div>
                                 <h4>Phone Number</h4>
-                                <p>0753 016 572</p>
+                                <p>818 555 6821</p>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
@@ -672,13 +672,13 @@
                                     <i class="mdi-action-thumb-up"></i>
                                 </div>
                                 <h4>Social Media</h4>
-                                <p>@GrayGrids</p>
+                                <p>@Kevelberger</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <h2 class="section-title">Love to Hear From You</h2>
+                    <h2 class="section-title">Let's Hear From You</h2>
                     <!-- Form -->
                     <form class="contact-form" role="form" method="post">
                         <i class="mdi-action-account-box"></i>
@@ -699,7 +699,7 @@
 
     <div class="map-area">
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6853.31334931688!2d149.5710983929677!3d-33.43399308961885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x63680231a1016da2!2sWestern+Region+Academy+of+Sport!5e0!3m2!1sen!2sbd!4v1436826340086" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13187.843010048036!2d-118.576762!3d34.275053!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1451176860999" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </div>
 
