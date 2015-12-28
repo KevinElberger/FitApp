@@ -6,7 +6,6 @@
     <meta name="description" content="Responsive Bootstrap Landing Page Template">
     <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="Grayrids">
     <title>FitApp - Track and Log Your Workouts</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +31,7 @@
         <li><a href="#why">why</a></li>
         <li><a href="#screenshot">Screenshots</a></li>
         <li><a href="#testimonial">Testimonial</a></li>
-        <li><a href="#clients">contract</a></li>
+        <li><a href="#clients">contact</a></li>
     </ul>
     <button class="close-button" id="close-button">Close Menu</button>
 </div>
@@ -62,6 +61,7 @@
                 <a href="/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
                 <a href="#features" class="btn btn-lg btn-border wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Learn More</a>
             </div>
+        </div>
     </header>
 
     <section id="features" class="section">
