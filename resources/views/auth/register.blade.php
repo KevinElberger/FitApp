@@ -6,7 +6,6 @@
     <meta name="description" content="Responsive Bootstrap Landing Page Template">
     <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="Grayrids">
     <title>FitApp - Track and Log Your Workouts</title>
 
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
@@ -18,81 +17,68 @@
     <link href="{{URL::asset('css/main.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/responsive.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/animate.min.css')}}" rel="stylesheet">
-
-    <div id="bg">
-        <img src="{{URL::asset('img/hero-area.jpg')}}" alt="">
-    </div>
-    .
 </head>
 
 <body>
+<div id="bg">
+    <img src="{{URL::asset('img/hero-area.jpg')}}" alt="">
+</div>
 <div class="content-wrap">
-    {{--<header class="hero-area" id="login">--}}
-        <div id="logo" class="logo">
-            <h1 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms"><b>Register</b></h1>
-        </div>
+    <header class="hero-area" id="login">
 
         <div class="container-fluid">
-            <div id="name">
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="panel panel-default">
-                        <br />
-                        <div class="panel-body">
+            <div class="col-md-4 col-md-offset-4">
+                <h1><b>Register</b></h1>
+                <div class="panel panel-default">
+                    <div class="panel-body">
 
-                            {{--Registration Form Starts Here--}}
-                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <form class="form-horizontal wow fadeInRight" role="form" method="POST" action="{{ url('/auth/register') }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Name</label>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" name="name" value="">
-                                    </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="name" value="">
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">E-Mail Address</label>
-                                    <div class="col-md-6">
-                                        <input type="email" class="form-control" name="email" value="">
-                                    </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">E-Mail Address</label>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" name="email" value="">
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Password</label>
-                                    <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password">
-                                    </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" class="form-control" name="password">
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Confirm Password</label>
-                                    <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password_confirmation">
-                                    </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Confirm Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" class="form-control" name="password_confirmation">
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            Register
-                                        </button>
-                                    </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Register
+                                    </button>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
-    {{--</header>--}}
+    </header>
 
 </div>
-
-
-
 
 <script src="{{URL::asset('js/jquery-2.1.4.min.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
@@ -121,13 +107,9 @@
 </html>
 
 <style>
-    /*html {*/
-    /*background: url(img/hero-area.jpg) no-repeat center center fixed;*/
-    /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*-o-background-size: cover;*/
-    /*background-size: cover;*/
-    /*}*/
+    h1 {
+        text-align: center;
+    }
 
     .logo {
         text-align: center;
@@ -150,5 +132,4 @@
         min-width: 50%;
         min-height: 50%;
     }
-
 </style>
