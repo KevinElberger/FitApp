@@ -16,7 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function() {
-    return view('pages/login');
+    return view('auth/login');
+});
+
+Route::get('/register', function() {
+    return view('auth/register');
 });
 
 Route::controllers([
