@@ -56,7 +56,7 @@
             <div class="contents text-right">
                 <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms"><b>FitApp - Track and Log Your Workouts</b></h1>
                 <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">WEB APP DESIGNED TO HELP YOU REACH YOUR GOALS</p>
-                <a href="/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
+                <a href="auth/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
                 <a href="#features" class="btn btn-lg btn-border wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Learn More</a>
             </div>
         </div>
@@ -160,38 +160,6 @@
         </div>
     </section>
 
-    {{--<section id="why" class="section">--}}
-        {{--<div class="container">--}}
-
-            {{--<div class="row">--}}
-
-                {{--<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">--}}
-                    {{--<img src="" alt="">--}}
-                {{--</div>--}}
-
-                {{--<div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">--}}
-                    {{--<div class="pull-left content">--}}
-                        {{--<h2>Sign Up With Us!</h2>--}}
-                        {{--<p>--}}
-                            {{--Material UI Bootstrap APP and Business Template orem ipsum <br>--}}
-                            {{--dolor sit amet, consectetur adipIusto quisquam idodit dolore inventore <br>--}}
-                            {{--eumetur adipIusto quisquam idodit dolore inventore eum'--}}
-                            {{--dolor sit amet, consectetur adipIusto quisquam idodit dolore inventore <br>--}}
-                        {{--</p>--}}
-                        {{--<ul class="list-item">--}}
-                            {{--<li><i class="mdi-action-done"></i>OffCanvas Menu</li>--}}
-                            {{--<li><i class="mdi-action-done"></i>Based on Material design</li>--}}
-                            {{--<li><i class="mdi-action-done"></i>Free to Use</li>--}}
-                            {{--<li><i class="mdi-action-done"></i>Built-with Bootstrap 3.5.x</li>--}}
-                            {{--<li><i class="mdi-action-done"></i>Refreshing Designß</li>--}}
-                        {{--</ul>--}}
-                        {{--<a href="javascript:void(0)" class="btn btn-lg btn-primary">Log In</a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
-
     <section id="main-features" class="section main-feature-gray">
         <div class="container">
 
@@ -290,7 +258,7 @@
         <div class="container">
             <div class="row text-center">
                 <h3 class="title-small wow bounce" data-wow-duration="1000ms" data-wow-delay="300ms">Join Us Today and Change Yourself</h3>
-                <a href="javascript:void(0)" class="btn btn-lg btn-border">Sign Up</a>
+                <a href="/auth/register" class="btn btn-lg btn-border">Sign Up</a>
             </div>
         </div>
     </section>

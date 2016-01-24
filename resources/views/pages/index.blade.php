@@ -29,9 +29,46 @@
                 <li><a href="">FAQ</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
+            <div class="nav navbar-nav navbar-right">
+                <li><a href="/auth/logout">Logout</a></li>
+            </div>
         </div>
     </div>
 </nav>
+
+<div id="workout"><h1>{{ ucfirst($user) }}'s Workouts</h1><br /></div>
+
+<div id="content">
+
+    <button type="button" class="btn btn-raised btn-primary" data-toggle="modal" data-target="#myModal">Add Workout</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add A Workout</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
 
 
 <script src="{{URL::asset('js/jquery-2.1.4.min.js')}}"></script>
@@ -61,7 +98,7 @@
 </html>
 
 <style>
-    .navbar {
-
+    #workout {
+        text-align: center;
     }
 </style>

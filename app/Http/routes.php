@@ -15,22 +15,18 @@ Route::get('/', function () {
     return view('pages/home');
 });
 
-Route::get('/login', function() {
-    return view('auth/login');
-});
-
-Route::get('/register', function() {
-    return view('auth/register');
-});
-
-Route::get('/index', function() {
-    return view('pages/index');
-});
+//Route::get('/index', function() {
+//
+//    $user = \Auth::user()->name;
+//
+//    return view('pages/index', compact('user'));
+//});
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +40,10 @@ Route::controllers([
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/index', function() {
+
+        $user = \Auth::user()->name;
+
+        return view('pages/index', compact('user'));
+    });
 });
