@@ -27,4 +27,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Users can have many workouts.
+     *
+     * @return mixed
+     */
+//    public function workouts() {
+//        return $this->hasMany('App\Workout');
+//    }
 }

@@ -15,6 +15,9 @@
     {{--<link href="{{URL::asset('css/main.css')}}" rel="stylesheet">--}}
     <link href="{{URL::asset('css/responsive.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/animate.min.css')}}" rel="stylesheet">
+    {{-- Included for Date Range Picker --}}
+
+
 
 </head>
 
@@ -38,9 +41,11 @@
 
 <div id="workout"><h1>{{ ucfirst($user) }}'s Workouts</h1><br /></div>
 
-<div id="content">
+<div class="jumbotron container">
 
-    <button type="button" class="btn btn-raised btn-primary" data-toggle="modal" data-target="#myModal">Add Workout</button>
+    <button type="button" id="addLift" class="btn btn-raised btn-primary" data-toggle="modal" data-target="#myModal">Add Lift</button>
+
+    <hr />
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -50,13 +55,43 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add A Workout</h4>
+                    <h4 class="modal-title">Add A Lift</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Some text in the modal.</p>
+                    <!-- Form for lift information -->
+                    <form class="liftInfo" name="liftInfo">
+
+                        <div class="form-group">
+                            <label class="label" for="name">Lift Name</label><br/>
+                            <input type="text" name="name" class="form-control"><br/>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="label" for="weight">Weight</label><br/>
+                            <input type="number" name="weight" class="form-control"><br/>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label" for="sets">Sets</label><br/>
+                            <input type="number" name="sets" class="form-control"><br/>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label" for="reps">Reps</label><br/>
+                            <input type="number" name="reps" class="form-control"><br/>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label" for="date">Date</label><br/>
+
+                        </div>
+
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input class="btn btn-raised btn-primary" type="submit" value="Finish" id="submit">
+                    <button type="button" class="btn btn-raised" data-dismiss="modal">Close</button>
                 </div>
             </div>
 
@@ -64,11 +99,6 @@
     </div>
 
 </div>
-
-
-
-
-
 
 
 <script src="{{URL::asset('js/jquery-2.1.4.min.js')}}"></script>
@@ -86,10 +116,13 @@
 <script src="{{URL::asset('js/smooth-scroll.js')}}"></script>
 
 
-<script>
+
+
+<script type="text/javascript">
     $(document).ready(function() {
         // This command is used to initialize some elements and make them work properly
         $.material.init();
+
     });
 </script>
 
@@ -98,6 +131,11 @@
 </html>
 
 <style>
+    #addLift {
+        display: block;
+        margin: 0 auto;
+    }
+
     #workout {
         text-align: center;
     }
