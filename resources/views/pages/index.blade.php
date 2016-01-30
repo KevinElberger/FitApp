@@ -15,9 +15,21 @@
     {{--<link href="{{URL::asset('css/main.css')}}" rel="stylesheet">--}}
     <link href="{{URL::asset('css/responsive.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/animate.min.css')}}" rel="stylesheet">
-    {{-- Included for Date Range Picker --}}
-
-
+    <link href="{{URL::asset('css/jquery-ui.css')}}" rel="stylesheet">
+    <script src="{{URL::asset('js/jquery-2.1.4.min.js')}}"></script>
+    <script src="{{URL::asset('js/jquery.mmenu.min.all.js')}}"></script>
+    <script src="{{URL::asset('js/jquery.inview.min.js')}}"></script>
+    <script src="{{URL::asset('js/jquery-ui.js')}}"></script>
+    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('js/ripples.min.js')}}"></script>
+    <script src="{{URL::asset('js/material.min.js')}}"></script>
+    <script src="{{URL::asset('js/wow.js')}}"></script>
+    <script src="{{URL::asset('js/count-to.js')}}"></script>
+    <script src="{{URL::asset('js/main.js')}}"></script>
+    <script src="{{URL::asset('js/classie.js')}}"></script>
+    <script src="{{URL::asset('js/jquery.nav.js')}}"></script>
+    <script src="{{URL::asset('js/smooth-on-scroll.js')}}"></script>
+    <script src="{{URL::asset('js/smooth-scroll.js')}}"></script>
 
 </head>
 
@@ -47,6 +59,8 @@
 
     <hr />
 
+
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -55,7 +69,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add A Lift</h4>
+                    <h2 class="modal-title">Add A Lift</h2>
                 </div>
                 <div class="modal-body">
                     <!-- Form for lift information -->
@@ -82,9 +96,9 @@
                             <input type="number" name="reps" class="form-control"><br/>
                         </div>
 
-                        <div class="form-group">
+                        <div id="dateField" class="form-group">
                             <label class="label" for="date">Date</label><br/>
-
+                                <input id="date" placeholder="Click to show date" class="form-control"><br/>
                         </div>
 
                     </form>
@@ -100,30 +114,12 @@
 
 </div>
 
-
-<script src="{{URL::asset('js/jquery-2.1.4.min.js')}}"></script>
-<script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
-<script src="{{URL::asset('js/ripples.min.js')}}"></script>
-<script src="{{URL::asset('js/material.min.js')}}"></script>
-<script src="{{URL::asset('js/wow.js')}}"></script>
-<script src="{{URL::asset('js/jquery.mmenu.min.all.js')}}"></script>
-<script src="{{URL::asset('js/count-to.js')}}"></script>
-<script src="{{URL::asset('js/jquery.inview.min.js')}}"></script>
-<script src="{{URL::asset('js/main.js')}}"></script>
-<script src="{{URL::asset('js/classie.js')}}"></script>
-<script src="{{URL::asset('js/jquery.nav.js')}}"></script>
-<script src="{{URL::asset('js/smooth-on-scroll.js')}}"></script>
-<script src="{{URL::asset('js/smooth-scroll.js')}}"></script>
-
-
-
-
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(function() {
         // This command is used to initialize some elements and make them work properly
         $.material.init();
-
-    });
+        $("#date").datepicker();
+    }());
 </script>
 
 </body>
@@ -137,6 +133,10 @@
     }
 
     #workout {
+        text-align: center;
+    }
+
+    .modal-title {
         text-align: center;
     }
 </style>
