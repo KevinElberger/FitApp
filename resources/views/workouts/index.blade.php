@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="">Home</a></li>
-                <li><a href="">Workouts</a></li>
+                <li><a href="/workouts/index">Workouts</a></li>
                 <li><a href="">FAQ</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
@@ -51,67 +51,17 @@
     </div>
 </nav>
 
-<div id="workout"><h1>{{ ucfirst($user) }}'s Workouts</h1><br /></div>
+<div id="workout"><h1>{{ ucfirst($user->name) }}'s Workouts</h1><br /></div>
 
 <div class="jumbotron container">
 
-    <button type="button" id="addLift" class="btn btn-raised btn-primary" data-toggle="modal" data-target="#myModal">Add Lift</button>
+    <a href="/workouts/create" class="btn btn-raised btn-primary">Add Lift</a>
 
     <hr />
 
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Add A Lift</h2>
-                </div>
-                <div class="modal-body">
-                    <!-- Form for lift information -->
-                    <form class="liftInfo" name="liftInfo">
-
-                        <div class="form-group">
-                            <label class="label" for="name">Lift Name</label><br/>
-                            <input type="text" name="name" class="form-control"><br/>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label class="label" for="weight">Weight</label><br/>
-                            <input type="number" name="weight" class="form-control"><br/>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="label" for="sets">Sets</label><br/>
-                            <input type="number" name="sets" class="form-control"><br/>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="label" for="reps">Reps</label><br/>
-                            <input type="number" name="reps" class="form-control"><br/>
-                        </div>
-
-                        <div id="dateField" class="form-group">
-                            <label class="label" for="date">Date</label><br/>
-                                <input id="date" placeholder="Click to show date" class="form-control"><br/>
-                        </div>
-
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <input class="btn btn-raised btn-primary" type="submit" value="Finish" id="submit">
-                    <button type="button" class="btn btn-raised" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
+    @foreach($workouts->get() as $workout)
+        <a href="#">{{ $workout->name }}</a><br/>
+    @endforeach
 </div>
 
 <script type="text/javascript">
@@ -137,6 +87,10 @@
     }
 
     .modal-title {
+        text-align: center;
+    }
+
+    .container {
         text-align: center;
     }
 </style>

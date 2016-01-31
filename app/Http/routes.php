@@ -15,18 +15,11 @@ Route::get('/', function () {
     return view('pages/home');
 });
 
-//Route::get('/index', function() {
-//
-//    $user = \Auth::user()->name;
-//
-//    return view('pages/index', compact('user'));
-//});
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);
-
 
 /*
 |--------------------------------------------------------------------------
@@ -40,10 +33,7 @@ Route::controllers([
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/index', function() {
-
-        $user = \Auth::user()->name;
-
-        return view('pages/index', compact('user'));
-    });
+    Route::get('/workouts/index','WorkoutsController@index');
+    Route::post('/workouts/create', 'WorkoutsController@store');
+    Route::get('/workouts/create', 'WorkoutsController@create');
 });

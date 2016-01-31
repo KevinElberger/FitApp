@@ -6,8 +6,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-
-    //protected $table = 'users';
     protected $primaryKey = 'id';
 
     /**
@@ -33,7 +31,7 @@ class User extends Authenticatable
      *
      * @return mixed
      */
-//    public function workouts() {
-//        return $this->hasMany('App\Workout');
-//    }
+    public function workouts() {
+        return $this->hasMany('App\Workout');
+    }
 }
