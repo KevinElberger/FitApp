@@ -32,9 +32,17 @@ class WorkoutsController extends Controller
         return view('workouts/index', compact('user','workouts'));
     }
 
-    public function show() {
-//        $user = \Auth::user();
-        return view('workouts/index');
+    /**
+     * Grab the correct individual workout (lift) to display to the user.
+     *
+     * @param Workout $workout
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($user, $id) {
+        $user = \App\User::where(['name' => $user])->get()->first();
+        $lift = \App\Workout::where(['id' => $id])->get()->first();
+
+        return view('workouts/show', compact('lift', 'user'));
     }
 
     /**

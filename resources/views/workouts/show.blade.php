@@ -51,70 +51,13 @@
     </div>
 </nav>
 
-<div id="workout"><h1>Add A Lift</h1><br /></div>
+<div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
 
 <div class="jumbotron container">
 
-        <!-- Form for lift information -->
-        {{  Form::open(array('url' => '/workouts/create', 'method' => 'POST')) }}
+    <hr />
 
-            <div class="form-group">
-                {{ Form::label('name', 'Lift Name:') }}
-                {{--<select class="form-control">--}}
-                    {{--<option>Deadlift</option>--}}
-                    {{--<option>Bench Press</option>--}}
-                    {{--<option>Squat</option>--}}
-                {{--</select>--}}
-                <div class="radio radio-primary">
-                    <label>
-                        <input name="options" id="bench" value="Bench Press" checked="" type="radio" />
-                        Bench Press
-                    </label>
-                </div>
-                <div class="radio radio-primary">
-                    <label>
-                        <input name="options" id="deadlift" value="Deadlift" type="radio" />
-                        Deadlift
-                    </label>
-                </div>
-                <div class="radio radio-primary">
-                    <label>
-                        <input name="options" id="squat" value="Squat" type="radio" />
-                        Squat
-                    </label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                {{ Form::label('weight', 'Weight:') }}
-                {{ Form::number('weight', null, ['class' => 'form-control']) }}
-            </div>
-
-            <div class="form-group">
-                {{ Form::label('sets', 'Sets:') }}
-                {{ Form::number('sets', null, ['class' => 'form-control']) }}
-            </div>
-
-            <div class="form-group">
-                {{ Form::label('reps', 'Reps:') }}
-                {{ Form::number('reps', null, ['class' => 'form-control']) }}
-            </div>
-
-            <div id="dateField" class="form-group">
-                {{ Form::label('date', 'Date:') }}
-                {{ Form::date('date', \Carbon\Carbon::now(), ['class' => 'form-control']) }}
-            </div>
-
-            <div id="wrap">
-                <div class="form-group">
-                    {{ Form::submit('Finish', ['class' => 'btn btn-raised btn-primary']) }}
-                </div>
-            </div>
-        {{ Form::close() }}
 </div>
-
-
-
 
 <script type="text/javascript">
     $(function() {
@@ -142,7 +85,7 @@
         text-align: center;
     }
 
-    #wrap {
+    .container {
         text-align: center;
     }
 </style>

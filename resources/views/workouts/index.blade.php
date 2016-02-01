@@ -51,6 +51,7 @@
     </div>
 </nav>
 
+
 <div id="workout"><h1>{{ ucfirst($user->name) }}'s Workouts</h1><br /></div>
 
 <div class="jumbotron container">
@@ -60,8 +61,13 @@
     <hr />
 
     @foreach($workouts->get() as $workout)
-        <a href="#">{{ $workout->name }}</a><br/>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/{{ $workout->id }}">{{ $workout->name }}</a></h4>
+            </div>
+        </div>
     @endforeach
+
 </div>
 
 <script type="text/javascript">

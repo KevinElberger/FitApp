@@ -15,12 +15,10 @@ Route::get('/', function () {
     return view('pages/home');
 });
 
-
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -36,4 +34,5 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/workouts/index','WorkoutsController@index');
     Route::post('/workouts/create', 'WorkoutsController@store');
     Route::get('/workouts/create', 'WorkoutsController@create');
+    Route::get('/workouts/{user}/{id}', 'WorkoutsController@show');
 });
