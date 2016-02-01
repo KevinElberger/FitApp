@@ -34,5 +34,5 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/workouts/index','WorkoutsController@index');
     Route::post('/workouts/create', 'WorkoutsController@store');
     Route::get('/workouts/create', 'WorkoutsController@create');
-    Route::get('/workouts/{user}/{id}', 'WorkoutsController@show');
+    Route::get('/workouts/{user}/{name}', 'WorkoutsController@show');
 });

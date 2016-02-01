@@ -38,9 +38,9 @@ class WorkoutsController extends Controller
      * @param Workout $workout
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($user, $id) {
+    public function show($user, $name) {
         $user = \App\User::where(['name' => $user])->get()->first();
-        $lift = \App\Workout::where(['id' => $id])->get()->first();
+        $lift = \App\Workout::where(['name' => $name])->get()->first();
 
         return view('workouts/show', compact('lift', 'user'));
     }

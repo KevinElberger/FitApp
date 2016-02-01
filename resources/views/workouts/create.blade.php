@@ -60,26 +60,21 @@
 
             <div class="form-group">
                 {{ Form::label('name', 'Lift Name:') }}
-                {{--<select class="form-control">--}}
-                    {{--<option>Deadlift</option>--}}
-                    {{--<option>Bench Press</option>--}}
-                    {{--<option>Squat</option>--}}
-                {{--</select>--}}
                 <div class="radio radio-primary">
                     <label>
-                        <input name="options" id="bench" value="Bench Press" checked="" type="radio" />
-                        Bench Press
+                        <input name="name" id="bench" value="bench" checked="" type="radio" />
+                        Bench
                     </label>
                 </div>
                 <div class="radio radio-primary">
                     <label>
-                        <input name="options" id="deadlift" value="Deadlift" type="radio" />
+                        <input name="name" id="deadlift" value="deadlift" type="radio" />
                         Deadlift
                     </label>
                 </div>
                 <div class="radio radio-primary">
                     <label>
-                        <input name="options" id="squat" value="Squat" type="radio" />
+                        <input name="name" id="squat" value="squat" type="radio" />
                         Squat
                     </label>
                 </div>

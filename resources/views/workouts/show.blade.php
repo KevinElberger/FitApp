@@ -50,9 +50,14 @@
         </div>
     </div>
 </nav>
-
-<div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
-
+@if($lift != null)
+    <div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
+@else
+    <div id="workout">
+        <h1>There are no lifts of this type recorded yet!</h1>
+        <a href="/workouts/create">Add one here</a>
+    </div>
+@endif
 <div class="jumbotron container">
 
     <hr />
