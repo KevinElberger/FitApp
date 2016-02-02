@@ -77,11 +77,11 @@
     }());
 
     // Start and end dates for the line graph
-    var data = [{"date": "2015-01"},{"date": "2016-12"}];
+    var data = [{"date": "2015-11"},{"date": "2016-12"}];
 
     // Initialize the SVG line graph by grabbing the visualization div
     var vis = d3.select("#visualization"),
-            WIDTH = 600,
+            WIDTH = 1400,
             HEIGHT = 400,
             MARGINS = {
                 top: 20,
@@ -93,16 +93,18 @@
             yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0,425]),
             xAxis = d3.svg.axis().scale(xScale)
                     .orient("bottom").ticks(12)
-                    .tickFormat(d3.time.format("%Y-%m"));
+                    .tickFormat(d3.time.format("%m-%Y"));
             yAxis = d3.svg.axis().scale(yScale)
                                 .orient("left");
 
     // Orient the x and y axis to proper positions
-    vis.append("svg:g")
+    vis.append("g")
             .attr("transform","translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+            .attr("class", "x axis")
             .call(xAxis);
-    vis.append("svg:g")
+    vis.append("g")
             .attr("transform", "translate(" + (MARGINS.left) + ",0)")
+            .attr("class", "y axis")
             .call(yAxis);
 </script>
 
@@ -130,8 +132,8 @@
 
     .axis path, .axis line {
         fill: none;
-        stroke: #000;
-        stroke-width: 3px;
+        stroke: #009688;
+        stroke-width: 2px;
         shape-rendering: crispEdges;
     }
 
@@ -143,6 +145,6 @@
     .line {
         fill: none;
         stroke: steelblue;
-        stroke-width: 1.5px;
+        stroke-width: 1px;
     }
 </style>
