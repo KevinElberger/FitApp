@@ -30,7 +30,7 @@
     <script src="{{URL::asset('js/jquery.nav.js')}}"></script>
     <script src="{{URL::asset('js/smooth-on-scroll.js')}}"></script>
     <script src="{{URL::asset('js/smooth-scroll.js')}}"></script>
-
+    <script src="//d3js.org/d3.v3.min.js"></script>
 </head>
 
 <body>
@@ -60,9 +60,14 @@
 @endif
 <div class="jumbotron container">
 
+    <h3>Lift Numbers</h3>
     <hr />
-
+    <p style="display: none">hello world motha fuckaaaa</p>
+    <div id="wrap">
+        <svg id="visualization" width="600" height="400"></svg>
+    </div>
 </div>
+
 
 <script type="text/javascript">
     $(function() {
@@ -70,6 +75,35 @@
         $.material.init();
         $("#date").datepicker();
     }());
+
+    // Start and end dates for the line graph
+    var data = [{"date": "2015-01"},{"date": "2016-12"}];
+
+    // Initialize the SVG line graph by grabbing the visualization div
+    var vis = d3.select("#visualization"),
+            WIDTH = 600,
+            HEIGHT = 400,
+            MARGINS = {
+                top: 20,
+                right: 20,
+                bottom: 20,
+                left: 50
+            },
+            xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(data[0].date), new Date(data[1].date)]),
+            yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0,425]),
+            xAxis = d3.svg.axis().scale(xScale)
+                    .orient("bottom").ticks(12)
+                    .tickFormat(d3.time.format("%Y-%m"));
+            yAxis = d3.svg.axis().scale(yScale)
+                                .orient("left");
+
+    // Orient the x and y axis to proper positions
+    vis.append("svg:g")
+            .attr("transform","translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+            .call(xAxis);
+    vis.append("svg:g")
+            .attr("transform", "translate(" + (MARGINS.left) + ",0)")
+            .call(yAxis);
 </script>
 
 </body>
@@ -92,5 +126,23 @@
 
     .container {
         text-align: center;
+    }
+
+    .axis path, .axis line {
+        fill: none;
+        stroke: #000;
+        stroke-width: 3px;
+        shape-rendering: crispEdges;
+    }
+
+    .axis text {
+        font-family: sans-serif;
+        font-size: 11px;
+    }
+
+    .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1.5px;
     }
 </style>

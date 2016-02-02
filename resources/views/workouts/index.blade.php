@@ -60,26 +60,21 @@
 
     <hr />
 
-    {{--@foreach($workouts->get() as $workout)--}}
-        {{--@if($workout->id < 4)--}}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/bench">Bench</a></h4>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/deadlift">Deadlift</a></h4>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/squat">Squat</a></h4>
-                </div>
-            </div>
-        {{--@endif--}}
-    {{--@endforeach--}}
-
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/bench">Bench</a></h4>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/deadlift">Deadlift</a></h4>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/squat">Squat</a></h4>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">
