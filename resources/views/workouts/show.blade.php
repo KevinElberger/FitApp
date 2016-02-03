@@ -31,6 +31,9 @@
     <script src="{{URL::asset('js/smooth-on-scroll.js')}}"></script>
     <script src="{{URL::asset('js/smooth-scroll.js')}}"></script>
     <script src="//d3js.org/d3.v3.min.js"></script>
+    <script>
+        var arr = [];
+    </script>
 </head>
 
 <body>
@@ -55,14 +58,19 @@
 @else
     <div id="workout">
         <h1>There are no lifts of this type recorded yet!</h1>
-        <a href="/workouts/create">Add one here</a>
+        <a href="/workouts/create"><b>Add one here</b></a>
     </div>
 @endif
 <div class="jumbotron container">
 
     <h3>Lift Numbers</h3>
     <hr />
-    <p style="display: none">hello world motha fuckaaaa</p>
+    @foreach($liftCollection as $l)
+        {{--<p style="display: none">{{ $l->weight }}</p>--}}
+        <script>
+            arr.push(["{{ $l->date }}", {{ $l->weight }}]);
+        </script>
+    @endforeach
     <div id="wrap">
         <svg id="visualization" width="600" height="400"></svg>
     </div>
@@ -77,7 +85,9 @@
     }());
 
     // Start and end dates for the line graph
-    var data = [{"date": "2015-11"},{"date": "2016-12"}];
+    var dateA = [{"date": "2015-11"},{"date": "2016-12"}];
+
+    var parseDate = d3.time.format("%m/%d/%Y").parse;
 
     // Initialize the SVG line graph by grabbing the visualization div
     var vis = d3.select("#visualization"),
@@ -89,8 +99,8 @@
                 bottom: 20,
                 left: 50
             },
-            xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(data[0].date), new Date(data[1].date)]),
-            yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0,425]),
+            xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(dateA[0].date), new Date(dateA[1].date)]),
+            yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0,425]);
             xAxis = d3.svg.axis().scale(xScale)
                     .orient("bottom").ticks(12)
                     .tickFormat(d3.time.format("%m-%Y"));
@@ -106,6 +116,23 @@
             .attr("transform", "translate(" + (MARGINS.left) + ",0)")
             .attr("class", "y axis")
             .call(yAxis);
+
+
+    var data = arr.map(function(d) {
+        return {
+            date: parseDate(d[0]),
+            close: d[1]
+        };
+    });
+
+    var line = d3.svg.line()
+            .x(function(d) { return xScale(d.date); })
+            .y(function(d) { return yScale(d.close); });
+
+    vis.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("d", line);
 </script>
 
 </body>

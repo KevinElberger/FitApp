@@ -41,8 +41,9 @@ class WorkoutsController extends Controller
     public function show($user, $name) {
         $user = \App\User::where(['name' => $user])->get()->first();
         $lift = \App\Workout::where(['name' => $name])->get()->first();
+        $liftCollection = \App\Workout::where(['name' => $name])->get();
 
-        return view('workouts/show', compact('lift', 'user'));
+        return view('workouts/show', compact('lift', 'user', 'liftCollection'));
     }
 
     /**

@@ -97,7 +97,7 @@
 
             <div id="dateField" class="form-group">
                 {{ Form::label('date', 'Date:') }}
-                {{ Form::date('date', \Carbon\Carbon::now(), ['class' => 'form-control']) }}
+                {{ Form::date('date', null, ['class' => 'form-control']) }}
             </div>
 
             <div id="wrap">
