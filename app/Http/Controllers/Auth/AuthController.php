@@ -30,6 +30,7 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/workouts/index';
+    protected $loginPath = '/auth/login';
 
 
     /**

@@ -29,35 +29,35 @@
                 <h1><b>Register</b></h1>
                 <div class="panel panel-default">
                     <div class="panel-body">
-
+{{--                        @include('errors.list')--}}
                         <form class="form-horizontal wow fadeInRight" role="form" method="POST" action="{{ url('/auth/register') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Name</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="name" value="">
+                                    <input type="text" class="form-control" name="name" value="" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">E-Mail Address</label>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" value="">
+                                    <input type="email" class="form-control" name="email" value="" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Password</label>
                                 <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password">
+                                    <input type="password" class="form-control" name="password" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Confirm Password</label>
                                 <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password_confirmation">
+                                    <input type="password" class="form-control" name="password_confirmation" required>
                                 </div>
                             </div>
 
@@ -95,10 +95,11 @@
 
 
 <script>
-    $(document).ready(function() {
+    $(function() {
         // This command is used to initialize some elements and make them work properly
         $.material.init();
-    });
+//        $('.alert').delay(2000).fadeOut(300);
+    }());
 </script>
 
 </body>

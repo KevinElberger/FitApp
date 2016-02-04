@@ -32,7 +32,7 @@
                     <div class="panel panel-default">
                         <br />
                         <div class="panel-body">
-                            @include('errors.list')
+{{--                            @include('errors.list')--}}
                             {{--Login Form Starts Here--}}
                             <form class="form-horizontal wow fadeInRight" id="loginForm" role="form" method="POST" action="{{ url('/auth/login') }}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -40,14 +40,14 @@
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">E-Mail Address </label>
                                     <div class="col-md-6">
-                                        <input type="email" class="form-control" name="email" value="">
+                                        <input type="email" class="form-control" name="email" value="" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">Password</label>
                                     <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password">
+                                        <input type="password" class="form-control" name="password" required>
                                     </div>
                                 </div>
 
@@ -90,10 +90,11 @@
 
 
     <script>
-        $(document).ready(function() {
+        $(function() {
             // This command is used to initialize some elements and make them work properly
             $.material.init();
-        });
+//            $('.alert').delay(2000).fadeOut(300);
+        }());
     </script>
 
 </body>
