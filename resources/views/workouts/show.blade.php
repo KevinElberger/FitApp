@@ -66,7 +66,6 @@
     <h3>Lift Numbers</h3>
     <hr />
     @foreach($liftCollection as $l)
-        {{--<p style="display: none">{{ $l->weight }}</p>--}}
         <script>
             arr.push(["{{ $l->date }}", {{ $l->weight }}]);
         </script>
@@ -79,17 +78,17 @@
 
 <script type="text/javascript">
     $(function() {
-        // This command is used to initialize some elements and make them work properly
+        // This command is used to initialize some elements and make them work properly.
         $.material.init();
         $("#date").datepicker();
     }());
 
-    // Start and end dates for the line graph
+    // Start and end dates for the line graph.
     var dateA = [{"date": "2015-11"},{"date": "2016-12"}];
 
     var parseDate = d3.time.format("%m/%d/%Y").parse;
 
-    // Initialize the SVG line graph by grabbing the visualization div
+    // Initialize the SVG line graph by grabbing the visualization div.
     var vis = d3.select("#visualization"),
             WIDTH = 1400,
             HEIGHT = 400,
@@ -99,6 +98,7 @@
                 bottom: 20,
                 left: 50
             },
+    // Declare the x and y scales as well as the x and y axis.
             xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(dateA[0].date), new Date(dateA[1].date)]),
             yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0,425]);
             xAxis = d3.svg.axis().scale(xScale)
@@ -107,7 +107,7 @@
             yAxis = d3.svg.axis().scale(yScale)
                                 .orient("left");
 
-    // Orient the x and y axis to proper positions
+    // Orient the x and y axis to proper positions.
     vis.append("g")
             .attr("transform","translate(0," + (HEIGHT - MARGINS.bottom) + ")")
             .attr("class", "x axis")
@@ -117,7 +117,7 @@
             .attr("class", "y axis")
             .call(yAxis);
 
-
+    // Parse the array of data for dates and closes.
     var data = arr.map(function(d) {
         return {
             date: parseDate(d[0]),
@@ -125,14 +125,35 @@
         };
     });
 
+    // Create the line for the graph.
     var line = d3.svg.line()
             .x(function(d) { return xScale(d.date); })
             .y(function(d) { return yScale(d.close); });
 
-    vis.append("path")
-            .datum(data)
-            .attr("class", "line")
-            .attr("d", line);
+    // Append the line to the SVG by using the data points from the array.
+    // Deprecated due to lack of animation.
+//    vis.append("path")
+//            .datum(data)
+//            .attr("class", "line")
+//            .attr("d", line);
+
+    // Append a path for animation.
+    var path = vis.append("path")
+            .attr("d", line(data))
+            .attr("stroke", "steelblue")
+            .attr("stroke-width", "2")
+            .attr("fill", "none");
+
+    var totalLength = path.node().getTotalLength();
+
+    // Transition (display) the path over 2 seconds.
+    path
+            .attr("stroke-dasharray", totalLength + " " + totalLength)
+            .attr("stroke-dashoffset", totalLength)
+            .transition()
+            .duration(2000)
+            .ease("linear")
+            .attr("stroke-dashoffset", 0);
 </script>
 
 </body>

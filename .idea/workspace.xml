@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5738f3a-a746-4916-85d5-02f1c5a22274" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/workouts/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/workouts/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/workouts/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/workouts/show.blade.php" />
     </list>
     <ignored path="fitapp.iws" />
@@ -29,11 +28,11 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/workouts/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-43.333332">
-              <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+            <state vertical-scroll-proportion="-8.259259">
+              <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
               <folding>
-                <marker date="1454354164980" expanded="true" signature="3409:3575" placeholder="..." />
-                <marker date="1454354164980" expanded="true" signature="3421:3574" placeholder="..." />
+                <marker date="1454546670436" expanded="true" signature="3409:3575" placeholder="..." />
+                <marker date="1454546670436" expanded="true" signature="3421:3574" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -42,10 +41,10 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/workouts/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27243245">
-              <caret line="101" column="134" selection-start-line="101" selection-start-column="134" selection-end-line="101" selection-end-column="134" />
+            <state vertical-scroll-proportion="0.68864864">
+              <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
               <folding>
-                <marker date="1454528357136" expanded="true" signature="3390:3543" placeholder="..." />
+                <marker date="1454548557924" expanded="true" signature="3328:3482" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -134,9 +133,9 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_01_31_200152_create_workouts_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/workouts/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" />
         <option value="$PROJECT_DIR$/resources/views/workouts/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/workouts/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workouts/show.blade.php" />
       </list>
     </option>
@@ -838,17 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/workouts/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-43.333332">
-          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
-          <folding>
-            <marker date="1454354164980" expanded="true" signature="3409:3575" placeholder="..." />
-            <marker date="1454354164980" expanded="true" signature="3421:3574" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.259259">
@@ -891,12 +879,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/workouts/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.259259">
+          <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+          <folding>
+            <marker date="1454546670436" expanded="true" signature="3409:3575" placeholder="..." />
+            <marker date="1454546670436" expanded="true" signature="3421:3574" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/workouts/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27243245">
-          <caret line="101" column="134" selection-start-line="101" selection-start-column="134" selection-end-line="101" selection-end-column="134" />
+        <state vertical-scroll-proportion="0.68864864">
+          <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
           <folding>
-            <marker date="1454528357136" expanded="true" signature="3390:3543" placeholder="..." />
+            <marker date="1454548557924" expanded="true" signature="3328:3482" placeholder="..." />
           </folding>
         </state>
       </provider>
