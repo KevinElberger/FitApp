@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages/home');
-});
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
@@ -31,6 +28,7 @@ Route::controllers([
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get('/', 'PagesController@index');
     Route::get('/workouts/index','WorkoutsController@index');
     Route::post('/workouts/create', 'WorkoutsController@store');
     Route::get('/workouts/create', 'WorkoutsController@create');

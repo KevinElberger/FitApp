@@ -66,6 +66,7 @@
                                     <button type="submit" class="btn btn-primary">
                                         Register
                                     </button>
+                                    <a href="/" class="btn btn-lg btn-primary" data-wow-duration="1000ms" data-wow-delay="500ms">Go Back</a>
                                 </div>
                             </div>
                         </form>
