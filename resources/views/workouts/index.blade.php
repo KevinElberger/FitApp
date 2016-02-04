@@ -55,6 +55,7 @@
 <div id="workout"><h1>{{ ucfirst($user->name) }}'s Workouts</h1><br /></div>
 
 <div class="jumbotron container">
+    @include('flash::message')
 
     <a href="/workouts/create" class="btn btn-raised btn-primary">Add Lift</a>
 
@@ -82,6 +83,7 @@
         // This command is used to initialize some elements and make them work properly
         $.material.init();
         $("#date").datepicker();
+        $(".alert").delay(2000).fadeOut(300);
     }());
 </script>
 

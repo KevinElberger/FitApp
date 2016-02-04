@@ -32,7 +32,7 @@
                     <div class="panel panel-default">
                         <br />
                         <div class="panel-body">
-
+                            @include('errors.list')
                             {{--Login Form Starts Here--}}
                             <form class="form-horizontal wow fadeInRight" id="loginForm" role="form" method="POST" action="{{ url('/auth/login') }}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

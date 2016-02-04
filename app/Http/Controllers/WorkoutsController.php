@@ -64,6 +64,7 @@ class WorkoutsController extends Controller
      */
     public function store(Request $request) {
         $this->createWorkout($request);
+        flash()->success('Your workout has been logged.');
 
         return redirect('workouts/index');
     }
