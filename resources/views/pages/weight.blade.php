@@ -50,6 +50,7 @@
         </div>
     </div>
 </nav>
+<div id="workout"><h1>{{ ucfirst($user->name) }}'s Weight</h1></div>
 
 <div class="jumbotron container">
 
@@ -58,3 +59,12 @@
 
 </body>
 </html>
+
+<style>
+    .jumbotron {
+        text-align: center;
+    }
+    #workout {
+        text-align: center;
+    }
+</style>
