@@ -57,7 +57,7 @@
 
         <!-- Form for lift information -->
         {{  Form::open(array('url' => '/workouts/create', 'method' => 'POST')) }}
-
+            @include('errors.list')
             <div class="form-group">
                 {{ Form::label('name', 'Lift Name:') }}
                 <div class="radio radio-primary">
@@ -118,6 +118,8 @@
         $("#date").datepicker({
             minDate: 0
         });
+
+        $('.alert').delay(2000).fadeOut(300);
     }());
 </script>
 

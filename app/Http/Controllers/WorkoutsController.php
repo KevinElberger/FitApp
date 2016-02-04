@@ -59,10 +59,10 @@ class WorkoutsController extends Controller
     /**
      * Saves a workout.
      *
-     * @param Request $request
+     * @param Requests\WorkoutRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request) {
+    public function store(Requests\WorkoutRequest $request) {
         $this->createWorkout($request);
         flash()->success('Your workout has been logged.');
 
@@ -72,10 +72,10 @@ class WorkoutsController extends Controller
     /**
      * Save a new workout.
      *
-     * @param Request $request
+     * @param Requests\WorkoutRequest $request
      * @return mixed
      */
-    public function createWorkout(Request $request) {
+    public function createWorkout(Requests\WorkoutRequest $request) {
 
         $workout = \Auth::user()->workouts()->create($request->all());
 

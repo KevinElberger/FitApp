@@ -50,7 +50,7 @@
         </div>
     </div>
 </nav>
-<div id="workout"><h1>{{ ucfirst($user->name) }}'s Weight</h1></div>
+<div id="workout"><h1>{{ ucfirst($user->name) }}'s Weight</h1><br/></div>
 
 <div class="jumbotron container">
 
