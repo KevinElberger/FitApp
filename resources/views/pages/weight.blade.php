@@ -51,59 +51,10 @@
     </div>
 </nav>
 
-
-<div id="workout"><h1>{{ ucfirst($user->name) }}'s Workouts</h1><br /></div>
-
 <div class="jumbotron container">
 
-    <a href="/workouts/create" class="btn btn-raised btn-primary">Add Lift</a>
-
-    <hr />
-
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/bench">Bench</a></h4>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/deadlift">Deadlift</a></h4>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/squat">Squat</a></h4>
-        </div>
-    </div>
 </div>
 
-<script type="text/javascript">
-    $(function() {
-        // This command is used to initialize some elements and make them work properly
-        $.material.init();
-        $("#date").datepicker();
-    }());
-</script>
 
 </body>
-
 </html>
-
-<style>
-    #addLift {
-        display: block;
-        margin: 0 auto;
-    }
-
-    #workout {
-        text-align: center;
-    }
-
-    .modal-title {
-        text-align: center;
-    }
-
-    .container {
-        text-align: center;
-    }
-</style>
