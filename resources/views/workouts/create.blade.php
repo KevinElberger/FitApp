@@ -57,6 +57,7 @@
 
         <!-- Form for lift information -->
         {{  Form::open(array('url' => '/workouts/create', 'method' => 'POST')) }}
+    @include('partials.flash')
             @include('errors.list')
             <div class="form-group">
                 {{ Form::label('name', 'Lift Name:') }}
@@ -97,7 +98,7 @@
 
             <div id="dateField" class="form-group">
                 {{ Form::label('date', 'Date:') }}
-                {{ Form::date('date', null, ['class' => 'form-control']) }}
+                <input type="text" id="date" class="form-control">
             </div>
 
             <div id="wrap">

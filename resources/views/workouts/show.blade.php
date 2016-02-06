@@ -80,8 +80,8 @@
     $(function() {
         // This command is used to initialize some elements and make them work properly.
         $.material.init();
-        $("#date").datepicker();
-    }());
+//        $("#date").datepicker();
+
 
     // Start and end dates for the line graph.
     var dateA = [{"date": "2015-11"},{"date": "2016-12"}];
@@ -154,6 +154,7 @@
             .duration(2000)
             .ease("linear")
             .attr("stroke-dashoffset", 0);
+    }());
 </script>
 
 </body>
