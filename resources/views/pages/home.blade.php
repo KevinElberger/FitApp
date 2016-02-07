@@ -19,32 +19,16 @@
 
 <body>
 
-<div class="navbar navbar-invers menu-wrap">
-    <div class="navbar-header text-center">
-        <a class="navbar-brand logo-right" href="javascript:void(0)"><i class="mdi-image-timelapse"></i><b>FitApp</b></a>
-    </div>
-    <ul class="nav navbar-nav main-navigation">
-        <li class="active"><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#why">why</a></li>
-        <li><a href="#screenshot">Screenshots</a></li>
-        <li><a href="#testimonial">Testimonial</a></li>
-        <li><a href="#clients">contact</a></li>
-    </ul>
-    <button class="close-button" id="close-button">Close Menu</button>
-</div>
-
 <div class="content-wrap">
     <header class="hero-area" id="home">
-
         <div class="container">
             <div class="col-md-12">
             </div>
             <div class="contents text-right">
                 <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms"><b>FitApp - Track and Log Your Workouts</b></h1>
                 <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">WEB APP DESIGNED TO HELP YOU REACH YOUR GOALS</p>
-                <a href="auth/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
-                <a href="auth/register" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Sign Up</a>
+                <a href="/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
+                <a href="/register" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Sign Up</a>
             </div>
         </div>
     </header>
@@ -132,6 +116,11 @@
         $.material.init();
     });
 </script>
+<style>
+    .hero-area {
+        padding: 280px 0;
+    }
+</style>
 
 </body>
 

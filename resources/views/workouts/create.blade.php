@@ -45,7 +45,7 @@
                 <li><a href="">Contact</a></li>
             </ul>
             <div class="nav navbar-nav navbar-right">
-                <li><a href="/auth/logout">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             </div>
         </div>
     </div>
@@ -98,7 +98,7 @@
 
             <div id="dateField" class="form-group">
                 {{ Form::label('date', 'Date:') }}
-                <input type="text" id="date" class="form-control">
+                {{ Form::text('date', '', ['class' => 'form-control']) }}
             </div>
 
             <div id="wrap">

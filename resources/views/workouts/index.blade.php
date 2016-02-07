@@ -45,7 +45,7 @@
                 <li><a href="">Contact</a></li>
             </ul>
             <div class="nav navbar-nav navbar-right">
-                <li><a href="/auth/logout">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             </div>
         </div>
     </div>
@@ -82,7 +82,6 @@
     $(function() {
         // This command is used to initialize some elements and make them work properly
         $.material.init();
-        $("#date").datepicker();
         $(".alert").delay(2000).fadeOut(300);
     }());
 </script>

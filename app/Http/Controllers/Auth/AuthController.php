@@ -30,13 +30,13 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/workouts/index';
-    protected $loginPath = '/auth/login';
+    protected $loginPath = '/login';
 
 
     /**
      * Create a new authentication controller instance.
      *
-     * @return void
+     *
      */
     public function __construct()
     {

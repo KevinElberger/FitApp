@@ -15,7 +15,8 @@ class PagesController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index() {
-        return view('pages/home');
+        $user = \Auth::user();
+        return view('pages/home', compact('user'));
     }
 
     /**

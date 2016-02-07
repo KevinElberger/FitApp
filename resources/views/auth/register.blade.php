@@ -1,3 +1,4 @@
+@section('content')
 <!doctype html>
 <html lang="en">
 
@@ -28,56 +29,83 @@
             <div class="col-md-4 col-md-offset-4">
                 <h1><b>Register</b></h1>
                 <div class="panel panel-default">
-                    <div class="panel-body">
-{{--                        @include('errors.list')--}}
-                        <form class="form-horizontal wow fadeInRight" role="form" method="POST" action="{{ url('/auth/register') }}">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                        {!! csrf_field() !!}
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Name</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="name" value="" required>
-                                </div>
-                            </div>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Name</label>
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">E-Mail Address</label>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" value="" required>
-                                </div>
-                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password" required>
-                                </div>
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Confirm Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password_confirmation" required>
-                                </div>
-                            </div>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Register
-                                    </button>
-                                    <a href="/" class="btn btn-lg btn-primary" data-wow-duration="1000ms" data-wow-delay="500ms">Go Back</a>
-                                </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                             </div>
-                        </form>
-                    </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" name="password">
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" name="password_confirmation">
+
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-user"></i>Register
+                                </button>
+                                <a href="/" class="btn btn-lg btn-primary" data-wow-duration="1000ms" data-wow-delay="500ms">Go Back</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-    </header>
-
+    </div>
 </div>
+</header>
+</div>
+@endsection
 
 <script src="{{URL::asset('js/jquery-2.1.4.min.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
@@ -111,10 +139,13 @@
         text-align: center;
     }
 
+    .hero-area {
+        padding: 0;
+    }
+
     .logo {
         text-align: center;
     }
-
     #bg {
         position: fixed;
         top: -50%;
