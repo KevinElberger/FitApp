@@ -80,30 +80,38 @@
     $(function() {
         // This command is used to initialize some elements and make them work properly.
         $.material.init();
-//        $("#date").datepicker();
 
-
-    // Start and end dates for the line graph.
-    var dateA = [{"date": "2015-11"},{"date": "2016-12"}];
+    var newArr = [];
+    for(var i=0; i<arr.length; i++) {
+        newArr.push(arr[i]);
+    }
+    newArr.sort(function(a, b) {
+        return Date.parse(a) - Date.parse(b);
+    });
+        // Start and end dates for the line graph.
+        var maxT = newArr[newArr.length - 1];
+        var minT = newArr[0];
+        console.log(maxT[0]);
+        console.log(minT[0]);
 
     var parseDate = d3.time.format("%m/%d/%Y").parse;
 
     // Initialize the SVG line graph by grabbing the visualization div.
     var vis = d3.select("#visualization"),
-            WIDTH = 1400,
+            WIDTH = 600,
             HEIGHT = 400,
             MARGINS = {
                 top: 20,
-                right: 20,
+                right: 0,
                 bottom: 20,
                 left: 50
             },
     // Declare the x and y scales as well as the x and y axis.
-            xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(dateA[0].date), new Date(dateA[1].date)]),
+            xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(parseDate(minT[0])), new Date(parseDate(maxT[0]))]),
             yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0,425]);
             xAxis = d3.svg.axis().scale(xScale)
-                    .orient("bottom").ticks(12)
-                    .tickFormat(d3.time.format("%m-%Y"));
+                    .orient("bottom").ticks(7)
+                    .tickFormat(d3.time.format("%m/%d/%Y"));
             yAxis = d3.svg.axis().scale(yScale)
                                 .orient("left");
 
@@ -124,6 +132,7 @@
             close: d[1]
         };
     });
+
 
     // Create the line for the graph.
     var line = d3.svg.line()
