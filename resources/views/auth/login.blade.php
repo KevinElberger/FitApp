@@ -9,18 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Grayrids">
     <title>FitApp - Track and Log Your Workouts</title>
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="{{asset('fonts/font-awesome.min.css')}}" type="text/css" media="screen">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css" type="text/css" media="screen">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
-    <link href="{{asset('css/material.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/ripples.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/main.css')}}" rel="stylesheet">
-    <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
-    <link href="{{asset('css/animate.min.css')}}" rel="stylesheet">
+    <link href="css/material.min.css" rel="stylesheet">
+    <link href="css/ripples.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
 
     <div id="bg">
-        <img src="{{asset('img/hero-area.jpg')}}" alt="">
+        <img src="img/hero-area.jpg" alt="">
     </div>
 </head>
 
@@ -78,19 +78,19 @@
     </header>
 </div>
 
-    <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/ripples.min.js')}}"></script>
-    <script src="{{asset('js/material.min.js')}}"></script>
-    <script src="{{asset('js/wow.js')}}"></script>
-    <script src="{{asset('js/jquery.mmenu.min.all.js')}}"></script>
-    <script src="{{asset('js/count-to.js')}}"></script>
-    <script src="{{asset('js/jquery.inview.min.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
-    <script src="{{asset('js/classie.js')}}"></script>
-    <script src="{{asset('js/jquery.nav.js')}}"></script>
-    <script src="{{asset('js/smooth-on-scroll.js')}}"></script>
-    <script src="{{asset('js/smooth-scroll.js')}}"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ripples.min.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.mmenu.min.all.js"></script>
+    <script src="js/count-to.js"></script>
+    <script src="js/jquery.inview.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/smooth-on-scroll.js"></script>
+    <script src="js/smooth-scroll.js"></script>
 
 
     <script>
