@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!doctype html>
 <html lang="en">
 
@@ -108,3 +111,4 @@
         text-align: center;
     }
 </style>
+@endsection
