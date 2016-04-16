@@ -31,6 +31,9 @@
         ]
     },
     "scripts": {
+        "compile": [
+          "php app/"
+        ],
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\""
         ],
