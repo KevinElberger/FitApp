@@ -8,6 +8,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/login', function() {
         return view('/auth/login');
     });
+    Route::get('/register', function() {
+        return view('/auth/register');
+    });
 
     Route::get('/pages/weight', 'PagesController@weight');
     Route::get('/workouts/index','WorkoutsController@index');
