@@ -68,6 +68,7 @@
     @foreach($liftCollection as $l)
         <script>
             arr.push(["{{ $l->date }}", {{ $l->weight }}]);
+            console.log({{$l->weight}});
         </script>
     @endforeach
     <div id="wrap">
