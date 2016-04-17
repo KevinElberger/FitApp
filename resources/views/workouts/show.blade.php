@@ -30,7 +30,7 @@
     <script src="/js/jquery.nav.js"></script>
     <script src="/js/smooth-on-scroll.js"></script>
     <script src="/js/smooth-scroll.js"></script>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="/js/d3.js"></script>
     <script>
         var arr = [];
     </script>
@@ -68,7 +68,6 @@
     @foreach($liftCollection as $l)
         <script>
             arr.push(["{{ $l->date }}", {{ $l->weight }}]);
-            console.log({{$l->weight}});
         </script>
     @endforeach
     <div id="wrap">
