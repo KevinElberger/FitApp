@@ -59,14 +59,14 @@
         <svg id="visualization" width="600" height="400"></svg>
     </div>
 </div>
-{{--<script src="/js/jquery-2.1.4.min.js"></script>--}}
-{{--<script src="/js/jquery.mmenu.min.all.js"></script>--}}
-{{--<script src="/js/jquery.inview.min.js"></script>--}}
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/jquery.mmenu.min.all.js"></script>
+<script src="/js/jquery.inview.min.js"></script>
 <script src="/js/jquery-ui.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/ripples.min.js"></script>
 <script src="/js/material.min.js"></script>
-{{--<script src="/js/wow.js"></script>--}}
+<script src="/js/wow.js"></script>
 <script src="/js/count-to.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/classie.js"></script>
