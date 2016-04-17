@@ -89,6 +89,8 @@
         // Start and end dates for the line graph.
         var maxT = newArr[newArr.length - 1];
         var minT = newArr[0];
+        console.log(maxT[0]);
+        console.log(minT[0]);
 
     var parseDate = d3.time.format("%m/%d/%Y").parse;
 
