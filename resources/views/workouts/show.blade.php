@@ -90,8 +90,6 @@
         // Start and end dates for the line graph.
         var maxT = newArr[newArr.length - 1];
         var minT = newArr[0];
-        console.log(maxT[0]);
-        console.log(minT[0]);
 
     var parseDate = d3.time.format("%m/%d/%Y").parse;
 
@@ -114,6 +112,8 @@
             yAxis = d3.svg.axis().scale(yScale)
                                 .orient("left");
 
+        console.log(maxT[0]);
+        console.log(minT[0]);
     // Orient the x and y axis to proper positions.
     vis.append("g")
             .attr("transform","translate(0," + (HEIGHT - MARGINS.bottom) + ")")
@@ -131,7 +131,6 @@
             close: d[1]
         };
     });
-
 
     // Create the line for the graph.
     var line = d3.svg.line()
