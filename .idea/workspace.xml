@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5738f3a-a746-4916-85d5-02f1c5a22274" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/workouts/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/workouts/show.blade.php" />
     </list>
     <ignored path="fitapp.iws" />
@@ -78,10 +77,10 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/workouts/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5643243">
-              <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.38918918">
+              <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
               <folding>
-                <marker date="1460876785520" expanded="true" signature="2925:3042" placeholder="..." />
+                <marker date="1460877032584" expanded="true" signature="2942:3059" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -874,10 +873,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/workouts/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5643243">
-          <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.38918918">
+          <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
           <folding>
-            <marker date="1460876785520" expanded="true" signature="2925:3042" placeholder="..." />
+            <marker date="1460877032584" expanded="true" signature="2942:3059" placeholder="..." />
           </folding>
         </state>
       </provider>

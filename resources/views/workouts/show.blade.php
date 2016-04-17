@@ -52,7 +52,7 @@
     <hr />
     @foreach($liftCollection as $l)
         <script>
-            arr.push(["{{ $l->date }}", {{ $l->weight }}]);
+            arr.push(["{{ $l->date->format('m/d/Y') }}", {{ $l->weight }}]);
         </script>
     @endforeach
     <div id="wrap">
