@@ -59,9 +59,9 @@
         <svg id="visualization" width="600" height="400"></svg>
     </div>
 </div>
-<script src="/js/jquery-2.1.4.min.js"></script>
-<script src="/js/jquery.mmenu.min.all.js"></script>
-<script src="/js/jquery.inview.min.js"></script>
+{{--<script src="/js/jquery-2.1.4.min.js"></script>--}}
+{{--<script src="/js/jquery.mmenu.min.all.js"></script>--}}
+{{--<script src="/js/jquery.inview.min.js"></script>--}}
 <script src="/js/jquery-ui.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/ripples.min.js"></script>
