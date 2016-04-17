@@ -107,7 +107,7 @@
             xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(parseDate(minT[0])), new Date(parseDate(maxT[0]))]),
             yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0,425]);
             xAxis = d3.svg.axis().scale(xScale)
-                    .orient("bottom").ticks(7)
+                    .orient("bottom").ticks(4)
                     .tickFormat(d3.time.format("%m/%Y"));
             yAxis = d3.svg.axis().scale(yScale)
                                 .orient("left");
