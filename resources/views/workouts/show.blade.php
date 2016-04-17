@@ -30,7 +30,7 @@
     <script src="/js/jquery.nav.js"></script>
     <script src="/js/smooth-on-scroll.js"></script>
     <script src="/js/smooth-scroll.js"></script>
-    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="/js/d3.js"></script>
     <script>
         var arr = [];
     </script>
