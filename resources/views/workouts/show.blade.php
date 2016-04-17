@@ -30,7 +30,7 @@
     <script src="/js/jquery.nav.js"></script>
     <script src="/js/smooth-on-scroll.js"></script>
     <script src="/js/smooth-scroll.js"></script>
-    <script src="/js/d3.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
     <script>
         var arr = [];
     </script>
@@ -104,7 +104,7 @@
                 left: 50
             },
     // Declare the x and y scales as well as the x and y axis.
-            xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(parseDate(minT[0])), new Date(parseDate(maxT[0]))]),
+            xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(minT[0]), new Date(maxT[0])]),
             yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0,425]);
             xAxis = d3.svg.axis().scale(xScale)
                     .orient("bottom").ticks(4)
@@ -112,8 +112,6 @@
             yAxis = d3.svg.axis().scale(yScale)
                                 .orient("left");
 
-        console.log(maxT[0]);
-        console.log(minT[0]);
     // Orient the x and y axis to proper positions.
     vis.append("g")
             .attr("transform","translate(0," + (HEIGHT - MARGINS.bottom) + ")")
