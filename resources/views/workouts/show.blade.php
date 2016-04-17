@@ -30,7 +30,7 @@
     <script src="/js/jquery.nav.js"></script>
     <script src="/js/smooth-on-scroll.js"></script>
     <script src="/js/smooth-scroll.js"></script>
-    <script src="/js/d3.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
     <script>
         var arr = [];
     </script>
@@ -91,7 +91,7 @@
         var maxT = newArr[newArr.length - 1];
         var minT = newArr[0];
 
-    var parseDate = d3.time.format("%m/%Y").parse;
+    var parseDate = d3.time.format("%m/%d/%Y").parse;
 
     // Initialize the SVG line graph by grabbing the visualization div.
     var vis = d3.select("#visualization"),

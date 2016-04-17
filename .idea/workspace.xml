@@ -77,10 +77,10 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/workouts/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2918919">
-              <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.5059459">
+              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
               <folding>
-                <marker date="1460875706424" expanded="true" signature="2972:3089" placeholder="..." />
+                <marker date="1460875829180" expanded="true" signature="2986:3103" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -873,10 +873,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/workouts/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2918919">
-          <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.5059459">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding>
-            <marker date="1460875706424" expanded="true" signature="2972:3089" placeholder="..." />
+            <marker date="1460875829180" expanded="true" signature="2986:3103" placeholder="..." />
           </folding>
         </state>
       </provider>
