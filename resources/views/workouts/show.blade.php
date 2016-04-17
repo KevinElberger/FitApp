@@ -108,7 +108,7 @@
             yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0,425]);
             xAxis = d3.svg.axis().scale(xScale)
                     .orient("bottom").ticks(7)
-                    .tickFormat(d3.time.format("%m/%d/%Y"));
+                    .tickFormat(d3.time.format("%m/%Y"));
             yAxis = d3.svg.axis().scale(yScale)
                                 .orient("left");
 
