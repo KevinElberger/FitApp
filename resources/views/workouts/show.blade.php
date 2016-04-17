@@ -91,7 +91,7 @@
         var maxT = newArr[newArr.length - 1];
         var minT = newArr[0];
 
-    var parseDate = d3.time.format("%m/%d/%Y").parse;
+    var parseDate = d3.time.format("%m/%Y").parse;
 
     // Initialize the SVG line graph by grabbing the visualization div.
     var vis = d3.select("#visualization"),
