@@ -52,7 +52,7 @@
     <hr />
     @foreach($liftCollection as $l)
         <script>
-            arr.push(["{{ $l->date->format('m/d/Y') }}", {{ $l->weight }}]);
+            arr.push(["{{ Carbon\Carbon::parse($l->date)->format('m/d/Y') }}", {{ $l->weight }}]);
         </script>
     @endforeach
     <div id="wrap">
