@@ -1,13 +1,9 @@
-@extends('layouts.app')
-
-@section('content')
-        <!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="Grayrids">
     <title>FitApp - Track and Log Your Workouts</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
@@ -27,88 +23,89 @@
 <body>
 
 <div class="content-wrap">
-    <header class="hero-area" id="login">
+    <header class="jumbotron" id="login">
         <div class="container-fluid">
             <div class="col-md-4 col-md-offset-4">
+                <div id="centered">
                 <h1><b>Register</b></h1>
-                <div class="panel panel-default">
-                    <br />
-                    <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-                            {!! csrf_field() !!}
+                    <div class="panel panel-default">
+                        <br />
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                                {!! csrf_field() !!}
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Name</label>
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    <label class="col-md-4 control-label">Name</label>
 
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="name" value="{{ old('name') }}">
 
-                                    @if ($errors->has('name'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                    @endif
+                                        @if ($errors->has('name'))
+                                            <span class="help-block">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">E-Mail Address</label>
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <label class="col-md-4 control-label">E-Mail Address</label>
 
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" name="email" value="{{ old('email') }}">
 
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Password</label>
+                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                    <label class="col-md-4 control-label">Password</label>
 
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password">
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control" name="password">
 
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
+                                        @if ($errors->has('password'))
+                                            <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Confirm Password</label>
+                                <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                                    <label class="col-md-4 control-label">Confirm Password</label>
 
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password_confirmation">
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control" name="password_confirmation">
 
-                                    @if ($errors->has('password_confirmation'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                    @endif
+                                        @if ($errors->has('password_confirmation'))
+                                            <span class="help-block">
+                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-user"></i>Register
-                                    </button>
-                                    <a href="/" class="btn btn-lg btn-primary" data-wow-duration="1000ms" data-wow-delay="500ms">Go Back</a>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-btn fa-user"></i>Register
+                                        </button>
+                                        <a href="/" class="btn btn-lg btn-primary" data-wow-duration="1000ms" data-wow-delay="500ms">Go Back</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 </div>
-
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/ripples.min.js"></script>
@@ -139,8 +136,14 @@
 <style>
     h1 {
         text-align: center;
+        color: #ffffff !important;
     }
-    .panel-body {
+    #centered {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        transform: translateY(50%);
     }
     #logo {
         text-align: center;
@@ -163,4 +166,3 @@
         min-height: 50%;
     }
 </style>
-@endsection

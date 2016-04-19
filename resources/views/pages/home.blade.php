@@ -1,11 +1,9 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>FitApp - Track and Log Your Workouts</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="fonts/font-awesome.min.css" type="text/css" media="screen">
@@ -15,86 +13,25 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
+    <div id="bg">
+        <img src="img/hero-area.jpg" alt="">
+    </div>
 </head>
-
 <body>
-
-<div class="content-wrap">
-    <header class="hero-area" id="home">
-        <div class="container">
-            <div class="col-md-12">
-            </div>
-            <div class="contents text-right">
-                <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms"><b>FitApp - Track and Log Your Workouts</b></h1>
-                <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">WEB APP DESIGNED TO HELP YOU REACH YOUR GOALS</p>
-                <a href="/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
-                <a href="/register" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Sign Up</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="footer">
-        <div class="container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <h3>Products</h3>
-                        <ul>
-                            <li><a href="http://wingthemes.com/">WingThemes</a>
-                            </li>
-                            <li><a href="http://graygrids.com/">Graygrids</a>
-                            </li>
-                            <li><a href="http://wpbean.com/">WPBean</a>
-                            </li>
-                            <li><a href="http://landingbow.com/">Landingbow</a>
-                            </li>
-                            <li><a href="http://freebiescircle.com/">FreebiesCicle</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <h3>FAQs</h3>
-                        <ul>
-                            <li><a href="#">Why choose us?</a>
-                            </li>
-                            <li><a href="#">Where we are?</a>
-                            </li>
-                            <li><a href="#">Fees</a>
-                            </li>
-                            <li><a href="#">Guarantee</a>
-                            </li>
-                            <li><a href="#">Discount</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <h3>About</h3>
-                        <ul>
-                            <li><a href="#">Career</a>
-                            </li>
-                            <li><a href="#">Partners</a>
-                            </li>
-                            <li><a href="#">Team</a>
-                            </li>
-                            <li><a href="#">Clients</a>
-                            </li>
-                            <li><a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <h3>Find us on</h3>
-                        <a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a class="social" href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
-                    </div>
+{{--<div class="content-wrap">--}}
+    <div class="jumbotron">
+        <div class="col-md-12">
+            <div class="centered">
+                <div class="text-right">
+                    <h1 class="wow wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><b>FitApp - Track and Log Your Workouts</b></h1>
+                    <p class="wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">WEB APP DESIGNED TO HELP YOU REACH YOUR GOALS</p>
+                    <a href="/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
+                    <a href="/register" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Sign Up</a>
                 </div>
             </div>
         </div>
-    </section>
-</div>
-
-
+    </div>
+{{--</div>--}}
 <script src="/js/jquery-2.1.4.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="js/ripples.min.js"></script>
@@ -108,20 +45,46 @@
 <script src="js/jquery.nav.js"></script>
 <script src="js/smooth-on-scroll.js"></script>
 <script src="js/smooth-scroll.js"></script>
-
-
 <script>
     $(document).ready(function() {
         // This command is used to initialize some elements and make them work properly
         $.material.init();
     });
 </script>
+</body>
+</html>
 <style>
-    .hero-area {
-        padding: 280px 0;
+    h1 {
+        color: white !important;
+    }
+    p {
+        color: white !important;
+    }
+    .jumbotron {
+        text-align: right;
+    }
+    .text-right {
+        position: relative;
+        top: 60%;
+        -webkit-transform: translateY(60%);
+        -ms-transform: translateY(60%);
+        transform: translateY(60%);
+    }
+    #bg {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+    }
+    #bg img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        min-width: 50%;
+        min-height: 50%;
     }
 </style>
-
-</body>
-
-</html>

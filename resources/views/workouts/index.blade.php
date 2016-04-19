@@ -10,49 +10,47 @@
     <link rel="stylesheet" href="/fonts/font-awesome.min.css" type="text/css" media="screen">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
     <link href="/css/material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link href="/css/ripples.min.css" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/jquery-ui.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <a class="navbar-brand logo-right" href="#"><i class="mdi-image-timelapse"></i><b>FitApp</b></a>
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="">Home</a></li>
-                <li><a href="/workouts/index">Workouts</a></li>
-                <li><a href="/pages/weight">Weight</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-            <div class="nav navbar-nav navbar-right">
-                <li><a href="/logout">Logout</a></li>
-            </div>
-        </div>
+<nav>
+    <div class="nav-wrapper teal">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="/workouts/index">Workouts</a></li>
+            <li><a href="/pages/weight">Weight</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/logout">Logout</a></li>
+        </ul>
     </div>
 </nav>
 
 <div id="workout"><h1>{{ ucfirst($user->name) }}'s Workouts</h1><br /></div>
 <div class="jumbotron container">
     @include('flash::message')
-    <a href="/workouts/create" class="btn btn-raised btn-primary">Add Lift</a>
+    <a href="/workouts/create" class="btn btn-raised btn-primary">Add Lift Record</a>
 
     <hr />
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/bench">Bench</a></h4>
+    <div class="card blue-grey darken-1">
+        <div class="card-action waves-effect waves-block waves-light">
+            <span class="card-title"><a href="/workouts/{{ $user->name }}/bench">Bench</a></span>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/deadlift">Deadlift</a></h4>
+    </div><br/>
+    <div class="card blue-grey darken-1">
+        <div class="card-action waves-effect waves-block waves-light">
+            <span class="card-title"><a href="/workouts/{{ $user->name }}/deadlift">Deadlift</a></span>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title"><a href="/workouts/{{ $user->name }}/squat">Squat</a></h4>
+    </div><br/>
+    <div class="card blue-grey darken-1">
+        <div class="card-action waves-effect waves-block waves-light">
+            <span class="card-title"><a href="/workouts/{{ $user->name }}/squat">Squat</a></span>
         </div>
     </div>
 </div>
@@ -70,6 +68,7 @@
 <script src="/js/jquery.nav.js"></script>
 <script src="/js/smooth-on-scroll.js"></script>
 <script src="/js/smooth-scroll.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 <script type="text/javascript">
     $(function() {
         // This command is used to initialize some elements and make them work properly
@@ -80,6 +79,9 @@
 </body>
 </html>
 <style>
+    a:hover {
+        color: white;
+    }
     #addLift {
         display: block;
         margin: 0 auto;

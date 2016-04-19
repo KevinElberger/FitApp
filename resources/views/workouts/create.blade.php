@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/fonts/font-awesome.min.css" type="text/css" media="screen">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
     <link href="/css/material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link href="/css/ripples.min.css" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
@@ -18,24 +19,21 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-    <a class="navbar-brand logo-right" href="#"><i class="mdi-image-timelapse"></i><b>FitApp</b></a>
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="">Home</a></li>
-                <li><a href="/workouts/index">Workouts</a></li>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-            <div class="nav navbar-nav navbar-right">
-                <li><a href="/logout">Logout</a></li>
-            </div>
-        </div>
+<nav>
+    <div class="nav-wrapper teal">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="/workouts/index">Workouts</a></li>
+            <li><a href="/pages/weight">Weight</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/logout">Logout</a></li>
+        </ul>
     </div>
 </nav>
 
-<div id="workout"><h1>Add A Lift</h1><br /></div>
+<div id="workout"><h1>Add A Lift Record</h1><br /></div>
 
 <div class="jumbotron container">
 
@@ -110,8 +108,9 @@
     $(function() {
         // This command is used to initialize some elements and make them work properly
         $.material.init();
+        // Disable users from creating logs in the future.
         $("#date").datepicker({
-            minDate: 0
+            maxDate: 0
         });
 
         $('.alert').delay(2000).fadeOut(300);
@@ -123,19 +122,19 @@
 </html>
 
 <style>
+    a:hover {
+        color: white;
+    }
     #addLift {
         display: block;
         margin: 0 auto;
     }
-
     #workout {
         text-align: center;
     }
-
     .modal-title {
         text-align: center;
     }
-
     #wrap {
         text-align: center;
     }

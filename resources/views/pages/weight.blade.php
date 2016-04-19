@@ -6,51 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>FitApp - Track and Log Your Workouts</title>
 
-    <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="{{URL::asset('fonts/font-awesome.min.css')}}" type="text/css" media="screen">
+    <link rel="stylesheet" href="/fonts/font-awesome.min.css" type="text/css" media="screen">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
-    <link href="{{URL::asset('css/material.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/ripples.min.css')}}" rel="stylesheet">
+    <link href="/css/material.min.css" rel="stylesheet">
+    <link href="/css/ripples.min.css" rel="stylesheet">
     {{--<link href="{{URL::asset('css/main.css')}}" rel="stylesheet">--}}
-    <link href="{{URL::asset('css/responsive.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/animate.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/jquery-ui.css')}}" rel="stylesheet">
-    <script src="{{URL::asset('js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{URL::asset('js/jquery.mmenu.min.all.js')}}"></script>
-    <script src="{{URL::asset('js/jquery.inview.min.js')}}"></script>
-    <script src="{{URL::asset('js/jquery-ui.js')}}"></script>
-    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{URL::asset('js/ripples.min.js')}}"></script>
-    <script src="{{URL::asset('js/material.min.js')}}"></script>
-    <script src="{{URL::asset('js/wow.js')}}"></script>
-    <script src="{{URL::asset('js/count-to.js')}}"></script>
-    <script src="{{URL::asset('js/main.js')}}"></script>
-    <script src="{{URL::asset('js/classie.js')}}"></script>
-    <script src="{{URL::asset('js/jquery.nav.js')}}"></script>
-    <script src="{{URL::asset('js/smooth-on-scroll.js')}}"></script>
-    <script src="{{URL::asset('js/smooth-scroll.js')}}"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/jquery-ui.css" rel="stylesheet">
 
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-    <a class="navbar-brand logo-right" href="#"><i class="mdi-image-timelapse"></i><b>FitApp</b></a>
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="">Home</a></li>
-                <li><a href="/workouts/index">Workouts</a></li>
-                <li><a href="/pages/weight">Weight</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-            <div class="nav navbar-nav navbar-right">
-                <li><a href="/auth/logout">Logout</a></li>
-            </div>
-        </div>
+<nav>
+    <div class="nav-wrapper teal">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="/workouts/index">Workouts</a></li>
+            <li><a href="/pages/weight">Weight</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/logout">Logout</a></li>
+        </ul>
     </div>
 </nav>
-<div id="workout"><h1>{{ ucfirst($user->name) }}'s Weight</h1><br/></div>
+<div id="workout"><h1>{{ ucfirst(\Auth::user()->name) }}'s Weight</h1><br/></div>
 
 <div class="jumbotron container">
 
@@ -61,6 +46,9 @@
 </html>
 
 <style>
+    a:hover {
+        color: white;
+    }
     .jumbotron {
         text-align: center;
     }
