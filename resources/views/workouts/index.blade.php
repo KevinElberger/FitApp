@@ -14,7 +14,7 @@
     <link href="/css/ripples.min.css" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
-    <link href="/css/jquery-ui.css" rel="stylesheet">
+    {{--<link href="/css/jquery-ui.css" rel="stylesheet">--}}
 </head>
 <body>
 <nav>

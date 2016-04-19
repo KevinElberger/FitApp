@@ -97,9 +97,9 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/ripples.min.js"></script>
 <script src="/js/material.min.js"></script>
-<script src="/js/wow.js"></script>
+{{--<script src="/js/wow.js"></script>--}}
 <script src="/js/count-to.js"></script>
-<script src="/js/main.js"></script>
+{{--<script src="/js/main.js"></script>--}}
 <script src="/js/classie.js"></script>
 <script src="/js/jquery.nav.js"></script>
 <script src="/js/smooth-on-scroll.js"></script>

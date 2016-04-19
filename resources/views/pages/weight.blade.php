@@ -14,11 +14,10 @@
     <link href="/css/ripples.min.css" rel="stylesheet">
     {{--<link href="{{URL::asset('css/main.css')}}" rel="stylesheet">--}}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/jquery-ui.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -35,13 +34,19 @@
         </ul>
     </div>
 </nav>
-<div id="workout"><h1>{{ ucfirst(\Auth::user()->name) }}'s Weight</h1><br/></div>
+<div id="workout"><h1>Set Your Weight</h1><br/></div>
 
 <div class="jumbotron container">
-
+    {{  Form::open(array('url' => '/pages/weight', 'method' => 'PATCH')) }}
+        <div class="form-group">
+            {{ Form::label('weight', 'Current Weight') }}
+            {{ Form::number('weight', $user['weight'], ['class' => 'form-control']) }}
+        </div>
+    {{ Form::submit('Finish', ['class' => 'btn btn-raised btn-primary']) }}
+    {{ Form::close() }}
 </div>
-
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
 
