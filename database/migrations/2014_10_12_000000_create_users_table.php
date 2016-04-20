@@ -5,6 +5,11 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateUsersTable extends Migration
 {
+
+    protected $fillable = [
+      'name',
+      'gender'
+    ];
     /**
      * Run the migrations.
      *
@@ -17,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password', 60);
+            $table->string('gender');
             $table->integer('weight')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -38,8 +38,7 @@
                                     <label class="col-md-4 control-label">Name</label>
 
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-
+                                        <input type="text" class="form-control" name="name" value="{{ old('name') }}" >
                                         @if ($errors->has('name'))
                                             <span class="help-block">
                                             <strong>{{ $errors->first('name') }}</strong>
@@ -59,6 +58,19 @@
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                         @endif
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    {{ Form::label('gender', 'Gender', ['class' => 'col-md-4 control-label']) }}
+                                    <div class="radio radio-primary">
+                                        <label>
+                                            <input name="gender" id="gender" value="male" checked="" type="radio" />
+                                            Male
+                                        </label>
+                                        <label>
+                                            <input name="gender" id="gender" value="female" type="radio" />
+                                            Female
+                                        </label>
                                     </div>
                                 </div>
 
