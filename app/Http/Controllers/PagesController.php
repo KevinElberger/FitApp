@@ -20,24 +20,32 @@ class PagesController extends Controller
     }
 
     /**
-     * Saves the weight of the authenticated user.
+     * Displays the currently recorded weight of the user.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function weight() {
         $user = \Auth::user();
-//        dd($user);
-        return view('pages/weight', compact('user'));
+        $weight = $user->weights()->get()->last();
+        return view('pages/weight', compact('user', 'weight'));
     }
 
+    /**
+     * Saves a new weight.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(Request $request) {
-        $auth = \Auth::user()->id;
-        $user = \App\User::where(['id' => $auth])->get()->first();
-        $weight = $request->request->all()['weight'];
-        $user->weight = $weight;
-        $user->save();
+        $weight = \Auth::user()->weights()->create($request->all());
+//        $auth = \Auth::user()->id;
+//        $user = \App\User::where(['id' => $auth])->get()->first();
+//        $weight = $request->request->all()['weight'];
+//        $user->weight = $weight;
+//        $user->save();
         flash()->success("Your current weight has been recorded.");
 
         return redirect('workouts/index');
     }
+
 }

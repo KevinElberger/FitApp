@@ -25,8 +25,12 @@
                 <div class="text-right">
                     <h1 class="wow wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><b>FitApp - Track and Log Your Workouts</b></h1>
                     <p class="wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">WEB APP DESIGNED TO HELP YOU REACH YOUR GOALS</p>
-                    <a href="/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
-                    <a href="/register" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Sign Up</a>
+                    @if(\Auth::guest())
+                        <a href="/login" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Log In</a>
+                        <a href="/register" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Sign Up</a>
+                    @else
+                        <a href="/workouts/index" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Home</a>
+                    @endif
                 </div>
             </div>
         </div>

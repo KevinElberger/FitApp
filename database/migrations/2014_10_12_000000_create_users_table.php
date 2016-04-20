@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->string('gender');
-            $table->integer('weight')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

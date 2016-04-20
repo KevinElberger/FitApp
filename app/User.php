@@ -34,4 +34,13 @@ class User extends Authenticatable
     public function workouts() {
         return $this->hasMany('App\Workout');
     }
+
+    /**
+     * Users can have many weights.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function weights() {
+        return $this->hasMany('App\Weight');
+    }
 }

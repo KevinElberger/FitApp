@@ -35,22 +35,40 @@
 <div class="jumbotron container">
     @include('flash::message')
     <a href="/workouts/create" class="btn btn-raised btn-primary">Add Lift Record</a>
-
     <hr />
-
-    <div class="card blue-grey darken-1">
-        <div class="card-action waves-effect waves-block waves-light">
-            <span class="card-title"><a href="/workouts/{{ $user->name }}/bench">Bench</a></span>
+    <h3>View Your Lifts</h3>
+    <div class="row">
+        <div class="col s12 m4">
+            <div class="card blue-grey darken-1">
+                <div class="card-action waves-effect waves-block waves-light">
+                    <span class="card-title"><a href="/workouts/{{ $user->name }}/bench">Bench</a></span>
+                </div>
+            </div><br/>
         </div>
-    </div><br/>
-    <div class="card blue-grey darken-1">
-        <div class="card-action waves-effect waves-block waves-light">
-            <span class="card-title"><a href="/workouts/{{ $user->name }}/deadlift">Deadlift</a></span>
+        <div class="col s12 m4">
+            <div class="card blue-grey darken-1">
+                <div class="card-action waves-effect waves-block waves-light">
+                    <span class="card-title"><a href="/workouts/{{ $user->name }}/deadlift">Deadlift</a></span>
+                </div>
+            </div><br/>
         </div>
-    </div><br/>
-    <div class="card blue-grey darken-1">
-        <div class="card-action waves-effect waves-block waves-light">
-            <span class="card-title"><a href="/workouts/{{ $user->name }}/squat">Squat</a></span>
+        <div class="col s12 m4">
+            <div class="card blue-grey darken-1">
+                <div class="card-action waves-effect waves-block waves-light">
+                    <span class="card-title"><a href="/workouts/{{ $user->name }}/squat">Squat</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h3>View Your Weight</h3>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-action waves-effect waves-block waves-light">
+                    <span class="card-title"><a href="/workouts/{{ $user->name }}/bench">Weight Progress</a></span>
+                </div>
+            </div><br/>
         </div>
     </div>
 </div>

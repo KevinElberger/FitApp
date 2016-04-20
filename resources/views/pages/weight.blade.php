@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="/fonts/font-awesome.min.css" type="text/css" media="screen">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
     <link href="/css/material.min.css" rel="stylesheet">
-    <link href="/css/ripples.min.css" rel="stylesheet">
-    {{--<link href="{{URL::asset('css/main.css')}}" rel="stylesheet">--}}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/ripples.min.css" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/jquery-ui.css" rel="stylesheet">
@@ -35,18 +33,45 @@
     </div>
 </nav>
 <div id="workout"><h1>Set Your Weight</h1><br/></div>
-
 <div class="jumbotron container">
-    {{  Form::open(array('url' => '/pages/weight', 'method' => 'PATCH')) }}
+    {{  Form::open(array('url' => '/pages/weight', 'method' => 'POST')) }}
         <div class="form-group">
             {{ Form::label('weight', 'Current Weight') }}
-            {{ Form::number('weight', $user['weight'], ['class' => 'form-control']) }}
+            {{ Form::number('weight', $weight->weight, ['class' => 'form-control']) }}
+        </div>
+        <div id="dateField" class="form-group">
+            {{ Form::label('date', 'Date:') }}
+            {{ Form::text('date', '', ['class' => 'form-control']) }}
         </div>
     {{ Form::submit('Finish', ['class' => 'btn btn-raised btn-primary']) }}
     {{ Form::close() }}
 </div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/jquery.mmenu.min.all.js"></script>
+<script src="/js/jquery.inview.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/ripples.min.js"></script>
+<script src="/js/material.min.js"></script>
+{{--<script src="/js/wow.js"></script>--}}
+<script src="/js/count-to.js"></script>
+{{--<script src="/js/main.js"></script>--}}
+<script src="/js/classie.js"></script>
+<script src="/js/jquery.nav.js"></script>
+<script src="/js/smooth-on-scroll.js"></script>
+<script src="/js/smooth-scroll.js"></script>
+<script type="text/javascript">
+    $(function() {
+        // This command is used to initialize some elements and make them work properly
+        $.material.init();
+        // Disable users from creating logs in the future.
+        $("#date").datepicker({
+            maxDate: 0
+        });
+
+        $('.alert').delay(2000).fadeOut(300);
+    }());
+</script>
 </body>
 </html>
 

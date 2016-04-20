@@ -12,7 +12,6 @@
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
     <link href="/css/material.min.css" rel="stylesheet">
     <link href="/css/ripples.min.css" rel="stylesheet">
-    {{--<link href="{{URL::asset('css/main.css')}}" rel="stylesheet">--}}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
@@ -20,9 +19,9 @@
     <link href="/css/jquery-ui.css" rel="stylesheet">
     <script>
         var arr = [];
+        var repArr = [];
     </script>
 </head>
-
 <body>
 <nav>
     <div class="nav-wrapper teal">
@@ -39,212 +38,70 @@
 </nav>
 @if($lift != null)
     <div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
+
+    <div class="jumbotron container">
+
+        <h3>Lift Numbers</h3>
+        <hr />
+        @foreach($liftCollection as $l)
+            <script>
+                arr.push(["{{ Carbon\Carbon::parse($l->date)->format('m/d/Y') }}", {{ $l->weight }}]);
+                repArr.push([{{$l->weight}},{{$l->reps}}]);
+            </script>
+        @endforeach
+        <div id="wrap">
+            <svg id="visualization" width="600" height="400"></svg>
+        </div>
+        <br />
+    </div>
+    <div class="jumbotron container">
+        <h2>Statistics</h2>
+        <hr />
+        <div class="row">
+            <h4>Highest Lift</h4>
+            <div class="col s6">
+                <i class="large material-icons">trending_up</i><h5>Personal Record</h5><br />
+                <p class="flow-text" id="highestLift"></p>
+            </div>
+            <div class="col s6">
+                <i class="large material-icons">today</i><h5>Achieved On</h5><br />
+                <p class="flow-text" id="highestDay"></p>
+            </div>
+            <div class="col s12">
+                <hr />
+                <h4>Lift Progress</h4>
+                <i class="large material-icons">assessment</i><h5>You've Improved By</h5><br />
+                <p class="flow-text" id="improvement"></p>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <h4>One Rep Max</h4>
+            <div class="col s12">
+                <i class="large material-icons">fitness_center</i><h5>1RM from PR and Reps</h5><br />
+                <p class="flow-text" id="orm"></p>
+            </div>
+        </div>
+    </div>
 @else
     <div id="workout">
         <h1>There are no lifts of this type recorded yet!</h1>
-        <a href="/workouts/create"><b>Add one here</b></a>
+        <a href="/workouts/create" class="btn btn-raised btn-primary"><b>Add one here</b></a>
     </div>
 @endif
-<div class="jumbotron container">
-
-    <h3>Lift Numbers</h3>
-    <hr />
-    @foreach($liftCollection as $l)
-        <script>
-            arr.push(["{{ Carbon\Carbon::parse($l->date)->format('m/d/Y') }}", {{ $l->weight }}]);
-        </script>
-    @endforeach
-    <div id="wrap">
-        <svg id="visualization" width="600" height="400"></svg>
-    </div>
-    <br />
-</div>
-<div class="jumbotron container">
-    <h3>Statistics</h3>
-    <hr />
-    <div class="row">
-        <div class="col s6">
-            <i class="large material-icons">trending_up</i><h5>Personal Record</h5><br />
-            <p class="flow-text" id="highestLift"></p>
-        </div>
-        <div class="col s6">
-            <i class="large material-icons">today</i><h5>Achieved On</h5><br />
-            <p class="flow-text" id="highestDay"></p>
-        </div>
-        <div class="col s12">
-            <hr />
-            <i class="large material-icons">assessment</i><h5>You've Improved By</h5><br />
-            <p class="flow-text" id="improvement"></p>
-        </div>
-    </div>
-</div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 <script src="/js/jquery-2.1.4.min.js"></script>
 <script src="/js/jquery.mmenu.min.all.js"></script>
 <script src="/js/jquery.inview.min.js"></script>
 <script src="/js/jquery-ui.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="/js/lifts.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/ripples.min.js"></script>
 <script src="/js/material.min.js"></script>
-<script src="/js/wow.js"></script>
-<script src="/js/count-to.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/classie.js"></script>
 <script src="/js/jquery.nav.js"></script>
 <script src="/js/smooth-on-scroll.js"></script>
 <script src="/js/smooth-scroll.js"></script>
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        // Starts graphing function which calls statistic computation function.
-        initialize();
-        improvement();
-    });
-
-    function initialize() {
-        // This command is used to initialize some elements and make them work properly.
-        $.material.init();
-
-    var newArr = [];
-    for(var i=0; i<arr.length; i++) {
-        newArr.push(arr[i]);
-    }
-    newArr.sort(function(a, b) {
-        return Date.parse(a) - Date.parse(b);
-    });
-
-        // Start and end dates for the line graph.
-        var maxT = findMaxDate();
-        var minT = newArr[0];
-        console.log(maxT);
-
-        // If no entries are written, call liftRecords to append innerHTML for stats.
-        if(minT == null) {
-            liftRecords();
-        }
-
-            var parseDate = d3.time.format("%m/%d/%Y").parse;
-
-            // Initialize the SVG line graph by grabbing the visualization div.
-            var vis = d3.select("#visualization"),
-                    WIDTH = 500,
-                    HEIGHT = 400,
-                    MARGINS = {
-                        top: 20,
-                        right: 0,
-                        bottom: 20,
-                        left: 50
-                    },
-            // Declare the x and y scales as well as the x and y axis.
-                    xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(minT[0]), new Date(maxT)]),
-                    yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0, 425]);
-            xAxis = d3.svg.axis().scale(xScale)
-                    .orient("bottom").ticks(5)
-                    .tickFormat(d3.time.format("%m/%Y"));
-            yAxis = d3.svg.axis().scale(yScale)
-                    .orient("left");
-
-
-            // Orient the x and y axis to proper positions.
-            vis.append("g")
-                    .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
-                    .attr("class", "x axis")
-                    .call(xAxis);
-            vis.append("g")
-                    .attr("transform", "translate(" + (MARGINS.left) + ",0)")
-                    .attr("class", "y axis")
-                    .call(yAxis);
-
-            // Parse the array of data for dates and closes.
-            var data = arr.map(function (d) {
-                return {
-                    date: parseDate(d[0]),
-                    close: d[1]
-                };
-            });
-
-            // Create the line for the graph.
-            var line = d3.svg.line()
-                    .x(function (d) {
-                        return xScale(d.date);
-                    })
-                    .y(function (d) {
-                        return yScale(d.close);
-                    });
-
-            // Append a path for animation.
-            var path = vis.append("path")
-                    .attr("d", line(data))
-                    .attr("stroke", "steelblue")
-                    .attr("stroke-width", "2")
-                    .attr("fill", "none");
-
-            var totalLength = path.node().getTotalLength();
-
-            // Transition (display) the path over 2 seconds.
-            path
-                    .attr("stroke-dasharray", totalLength + " " + totalLength)
-                    .attr("stroke-dashoffset", totalLength)
-                    .transition()
-                    .duration(2000)
-                    .ease("linear")
-                    .attr("stroke-dashoffset", 0);
-        liftRecords();
-    }
-
-    // Computes lifting records from given data to append to highest record on page.
-    function liftRecords() {
-        var highestLift = 0;
-        var highestDay;
-        for(var i=0; i < arr.length; i++) {
-            if(arr[i][1] > highestLift) {
-                highestLift = arr[i][1];
-                highestDay = arr[i][0];
-            }
-        }
-        if(highestLift > 0) {
-            document.getElementById('highestLift').innerHTML = highestLift.toString();
-            document.getElementById('highestDay').innerHTML = highestDay;
-        } else {
-            document.getElementById('highestLift').innerHTML = "No recorded lifts!";
-            document.getElementById('highestDay').innerHTML = "No recorded dates!";
-        }
-    }
-
-    // Computes the most recent date for scaling X-axis on d3 graph.
-    function findMaxDate() {
-        var maxT = arr[arr.length - 1];
-        console.log(maxT);
-        var maxDate = new Date(maxT[0]);
-        for (var x=0; x < arr.length; x++) {
-            var temp = new Date(arr[x][0]);
-            if (temp > maxDate) {
-                maxDate = temp;
-            }
-            console.log(temp);
-        }
-        return maxDate;
-    }
-
-    // Calculates how much a given lift has increased by over time.
-    function improvement() {
-        var lowestLift = arr[0][1];
-        var highestLift = 0;
-        var difference;
-        for (var i=0; i < arr.length; i++) {
-            if(arr[i][1] > highestLift) {
-                highestLift = arr[i][1];
-            }
-            if(arr[i][1] < lowestLift) {
-                lowestLift = arr[i][1];
-            }
-        }
-        difference = highestLift - lowestLift;
-        if (highestLift > 0) {
-            document.getElementById('improvement').innerHTML = difference + " pounds!";
-        }
-    }
-</script>
 </body>
 </html>
 <style>
