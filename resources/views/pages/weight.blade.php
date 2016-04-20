@@ -16,8 +16,10 @@
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/jquery-ui.css" rel="stylesheet">
+    <script>
+        var arr = [];
+    </script>
 </head>
-
 <body>
 <nav>
     <div class="nav-wrapper teal">
@@ -46,32 +48,33 @@
     {{ Form::submit('Finish', ['class' => 'btn btn-raised btn-primary']) }}
     {{ Form::close() }}
 </div>
+<div class="jumbotron container">
+    <h2>Weight Graph</h2>
+    <hr />
+    @foreach($weightCollection as $w)
+        <script>
+            arr.push(["{{ Carbon\Carbon::parse($w->date)->format('m/d/Y') }}", {{ $w->weight }}]);
+        </script>
+    @endforeach
+    <div id="wrap">
+        <svg id="visualization" width="600" height="400"></svg>
+    </div>
+    <br />
+</div>
 <script src="/js/jquery-2.1.4.min.js"></script>
 <script src="/js/jquery.mmenu.min.all.js"></script>
 <script src="/js/jquery.inview.min.js"></script>
 <script src="/js/jquery-ui.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/ripples.min.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="/js/weight.js"></script>
 <script src="/js/material.min.js"></script>
-{{--<script src="/js/wow.js"></script>--}}
 <script src="/js/count-to.js"></script>
-{{--<script src="/js/main.js"></script>--}}
 <script src="/js/classie.js"></script>
 <script src="/js/jquery.nav.js"></script>
 <script src="/js/smooth-on-scroll.js"></script>
 <script src="/js/smooth-scroll.js"></script>
-<script type="text/javascript">
-    $(function() {
-        // This command is used to initialize some elements and make them work properly
-        $.material.init();
-        // Disable users from creating logs in the future.
-        $("#date").datepicker({
-            maxDate: 0
-        });
-
-        $('.alert').delay(2000).fadeOut(300);
-    }());
-</script>
 </body>
 </html>
 
@@ -84,5 +87,20 @@
     }
     #workout {
         text-align: center;
+    }
+    .axis path, .axis line {
+        fill: none;
+        stroke: #009688;
+        stroke-width: 2px;
+        shape-rendering: crispEdges;
+    }
+    .axis text {
+        font-family: sans-serif;
+        font-size: 11px;
+    }
+    .dot {
+        fill: white;
+        stroke: steelblue;
+        stroke-width: 1.5px;
     }
 </style>

@@ -1,14 +1,15 @@
 $(document).ready(function() {
-    // Starts graphing function which calls statistic computation function.
+    // Disable users from creating logs in the future.
+    $("#date").datepicker({
+        maxDate: 0
+    });
+
+    $('.alert').delay(2000).fadeOut(300);
+    // Starts graphing function for weight graphing.
     initialize();
-    improvement();
-    oneRepMaxCalculator();
 });
 
 function initialize() {
-    // This command is used to initialize some elements and make them work properly.
-    $.material.init();
-
     var newArr = [];
     for(var i=0; i<arr.length; i++) {
         newArr.push(arr[i]);
@@ -17,18 +18,13 @@ function initialize() {
         return Date.parse(a) - Date.parse(b);
     });
 
-    // Start and end dates for the line graph.
+    // Start and end dates for the graph.
     var maxT = findMaxDate();
-    var minT = newArr[0];
-
-    // If no entries are written, call liftRecords to append innerHTML for stats.
-    if(minT == null) {
-        liftRecords();
-    }
+    var minT = findMinDate();
 
     var parseDate = d3.time.format("%m/%d/%Y").parse;
 
-    // Initialize the SVG line graph by grabbing the visualization div.
+    // Initialize the SVG graph by grabbing the visualization div.
     var vis = d3.select("#visualization"),
         WIDTH = 500,
         HEIGHT = 400,
@@ -39,14 +35,13 @@ function initialize() {
             left: 50
         },
     // Declare the x and y scales as well as the x and y axis.
-        xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(minT[0]), new Date(maxT)]),
+        xScale = d3.time.scale().range([MARGINS.left, WIDTH - MARGINS.right]).domain([new Date(minT), new Date(maxT)]),
         yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0, 425]);
     xAxis = d3.svg.axis().scale(xScale)
         .orient("bottom").ticks(5)
         .tickFormat(d3.time.format("%m/%Y"));
     yAxis = d3.svg.axis().scale(yScale)
         .orient("left");
-
 
     // Orient the x and y axis to proper positions.
     vis.append("g")
@@ -68,6 +63,7 @@ function initialize() {
 
     // Create the line for the graph.
     var line = d3.svg.line()
+        .interpolate("cardinal")
         .x(function (d) {
             return xScale(d.date);
         })
@@ -92,26 +88,15 @@ function initialize() {
         .duration(2000)
         .ease("linear")
         .attr("stroke-dashoffset", 0);
-    liftRecords();
-}
 
-// Computes lifting records from given data to append to highest record on page.
-function liftRecords() {
-    var highestLift = 0;
-    var highestDay;
-    for(var i=0; i < arr.length; i++) {
-        if(arr[i][1] > highestLift) {
-            highestLift = arr[i][1];
-            highestDay = arr[i][0];
-        }
-    }
-    if(highestLift > 0) {
-        document.getElementById('highestLift').innerHTML = highestLift.toString();
-        document.getElementById('highestDay').innerHTML = highestDay;
-    } else {
-        document.getElementById('highestLift').innerHTML = "No recorded lifts!";
-        document.getElementById('highestDay').innerHTML = "No recorded dates!";
-    }
+    // Add dots on graph for each data point.
+    vis.selectAll(".dot")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "dot")
+        .attr("cx", line.x())
+        .attr("cy", line.y())
+        .attr("r", 3.5);
 }
 
 // Computes the most recent date for scaling X-axis on d3 graph.
@@ -127,37 +112,15 @@ function findMaxDate() {
     return maxDate;
 }
 
-// Calculates how much a given lift has increased by over time.
-function improvement() {
-    var lowestLift = arr[0][1];
-    var highestLift = 0;
-    var difference;
-    for (var i=0; i < arr.length; i++) {
-        if(arr[i][1] > highestLift) {
-            highestLift = arr[i][1];
-        }
-        if(arr[i][1] < lowestLift) {
-            lowestLift = arr[i][1];
+// Computes the earliest date for scaling the x-axis on d3 graph.
+function findMinDate() {
+    var minT = arr[arr.length - 1];
+    var minDate = new Date(minT[0]);
+    for (var y=0; y < arr.length; y++) {
+        var temp = new Date(arr[y][0]);
+        if(temp < minDate) {
+            minDate = temp;
         }
     }
-    difference = highestLift - lowestLift;
-    if (highestLift > 0) {
-        document.getElementById('improvement').innerHTML = difference + " pounds!";
-    }
-}
-
-// Calculates a person's one rep max given their PR and reps.
-function oneRepMaxCalculator() {
-    // Initialize all variables
-    var highestLift = 0;
-    var reps = 0;
-    for(var i=0; i < repArr.length; i++) {
-        if(repArr[i][0] > highestLift) {
-            highestLift = repArr[i][0];
-            reps = repArr[i][1];
-        }
-    }
-    var formula = (reps / 30) + 1;
-    formula = (formula * highestLift).toFixed(0);
-    document.getElementById('orm').innerHTML = formula.toString() + " pounds!";
+    return minDate;
 }

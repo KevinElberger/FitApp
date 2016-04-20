@@ -26,8 +26,10 @@ class PagesController extends Controller
      */
     public function weight() {
         $user = \Auth::user();
+        $id = \Auth::user()->id;
         $weight = $user->weights()->get()->last();
-        return view('pages/weight', compact('user', 'weight'));
+        $weightCollection = \App\Weight::where(['user_id' => $id])->get();
+        return view('pages/weight', compact('user', 'weight', 'weightCollection'));
     }
 
     /**
