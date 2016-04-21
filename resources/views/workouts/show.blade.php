@@ -13,6 +13,8 @@
     <link href="/css/material.min.css" rel="stylesheet">
     <link href="/css/ripples.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <!-- stylesheet for tip display-->
+    <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
@@ -36,6 +38,7 @@
         </ul>
     </div>
 </nav>
+{{dd($liftCollection)}}
 @if(!empty($liftCollection->first()))
     <div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
 
@@ -94,6 +97,7 @@
 <script src="/js/jquery.inview.min.js"></script>
 <script src="/js/jquery-ui.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
+<script src="/js/index.js"></script>
 <script src="/js/lifts.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/ripples.min.js"></script>
@@ -138,5 +142,10 @@
         fill: none;
         stroke: steelblue;
         stroke-width: 1px;
+    }
+    .dot {
+        fill: white;
+        stroke: steelblue;
+        stroke-width: 1.5px;
     }
 </style>

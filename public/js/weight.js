@@ -24,6 +24,14 @@ function initialize() {
 
     var parseDate = d3.time.format("%m/%d/%Y").parse;
 
+    // Initialize tip variable for tip display on dots.
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+            return "<strong>Weight:</strong> <span style='color:teal'>" + d.close + "</span>";
+        });
+
     // Initialize the SVG graph by grabbing the visualization div.
     var vis = d3.select("#visualization"),
         WIDTH = 500,
@@ -52,6 +60,8 @@ function initialize() {
         .attr("transform", "translate(" + (MARGINS.left) + ",0)")
         .attr("class", "y axis")
         .call(yAxis);
+
+    vis.call(tip);
 
     // Parse the array of data for dates and closes.
     var data = arr.map(function (d) {
@@ -96,7 +106,9 @@ function initialize() {
         .attr("class", "dot")
         .attr("cx", line.x())
         .attr("cy", line.y())
-        .attr("r", 3.5);
+        .attr("r", 3.5)
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide);
 }
 
 // Computes the most recent date for scaling X-axis on d3 graph.

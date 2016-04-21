@@ -12,6 +12,8 @@
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
     <link href="/css/material.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <!-- stylesheet for tip display-->
+    <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
     <link href="/css/ripples.min.css" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
@@ -85,6 +87,7 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/ripples.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
+<script src="/js/index.js"></script>
 <script src="/js/weight.js"></script>
 <script src="/js/material.min.js"></script>
 <script src="/js/count-to.js"></script>
