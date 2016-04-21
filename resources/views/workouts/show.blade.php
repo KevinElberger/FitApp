@@ -38,18 +38,20 @@
         </ul>
     </div>
 </nav>
-{{dd($liftCollection)}}
 @if(!empty($liftCollection->first()))
+    @if(!empty($lift))
     <div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
 
     <div class="jumbotron container">
         <h3>Lift Numbers</h3>
         <hr />
         @foreach($liftCollection as $l)
+            @if($l->name == $lift->name)
             <script>
                 arr.push(["{{ Carbon\Carbon::parse($l->date)->format('m/d/Y') }}", {{ $l->weight }}]);
                 repArr.push([{{$l->weight}},{{$l->reps}}]);
             </script>
+            @endif
         @endforeach
         <div id="wrap">
             <svg id="visualization" width="600" height="400"></svg>
@@ -85,6 +87,12 @@
             </div>
         </div>
     </div>
+    @else
+        <div id="workout">
+            <h1>There are no lifts of this type recorded yet!</h1>
+            <a href="/workouts/create" class="btn btn-raised btn-primary"><b>Add one here</b></a>
+        </div>
+    @endif
 @else
     <div id="workout">
         <h1>There are no lifts of this type recorded yet!</h1>
