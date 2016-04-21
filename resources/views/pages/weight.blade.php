@@ -34,6 +34,7 @@
         </ul>
     </div>
 </nav>
+@if($lift != null)
 <div id="workout"><h1>Set Your Weight</h1><br/></div>
 <div class="jumbotron container">
     {{  Form::open(array('url' => '/pages/weight', 'method' => 'POST')) }}
@@ -61,6 +62,22 @@
     </div>
     <br />
 </div>
+@else
+    <div id="workout"><h1>Set Your Weight</h1><br/></div>
+    <div class="jumbotron container">
+        {{  Form::open(array('url' => '/pages/weight', 'method' => 'POST')) }}
+        <div class="form-group">
+            {{ Form::label('weight', 'Current Weight') }}
+        {{ Form::number('weight', null, ['class' => 'form-control']) }}
+    </div>
+    <div id="dateField" class="form-group">
+        {{ Form::label('date', 'Date:') }}
+        {{ Form::text('date', '', ['class' => 'form-control']) }}
+    </div>
+    {{ Form::submit('Finish', ['class' => 'btn btn-raised btn-primary']) }}
+        {{ Form::close() }}
+    </div>
+@endif
 <script src="/js/jquery-2.1.4.min.js"></script>
 <script src="/js/jquery.mmenu.min.all.js"></script>
 <script src="/js/jquery.inview.min.js"></script>

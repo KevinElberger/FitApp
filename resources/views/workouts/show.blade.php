@@ -36,11 +36,10 @@
         </ul>
     </div>
 </nav>
-@if($lift != null)
+@if(!empty($liftCollection->first()))
     <div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
 
     <div class="jumbotron container">
-
         <h3>Lift Numbers</h3>
         <hr />
         @foreach($liftCollection as $l)
