@@ -14,9 +14,13 @@ function initialize() {
     for(var i=0; i<arr.length; i++) {
         newArr.push(arr[i]);
     }
+    // Sort the array's dates in order from oldest to newest.
     newArr.sort(function(a, b) {
         return Date.parse(a) - Date.parse(b);
     });
+    for (var x=0; x<newArr.length;x++) {
+        newArr.sort(newArr[x],newArr[x+1]);
+    }
 
     // Start and end dates for the graph.
     var maxT = findMaxDate();
@@ -64,7 +68,7 @@ function initialize() {
     vis.call(tip);
 
     // Parse the array of data for dates and closes.
-    var data = arr.map(function (d) {
+    var data = newArr.map(function (d) {
         return {
             date: parseDate(d[0]),
             close: d[1]
