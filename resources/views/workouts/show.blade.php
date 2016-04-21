@@ -42,6 +42,7 @@
     @if(!empty($lift))
     <div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
 
+
     <div class="jumbotron container">
         <h3>Lift Numbers</h3>
         <hr />
@@ -57,6 +58,15 @@
             <svg id="visualization" width="600" height="400"></svg>
         </div>
         <br />
+    </div>
+    <div id="weightOfUser">
+        <input type="hidden" id="weight" value="{{$userWeight->weight}}">
+    </div>
+    <div id="genderOfUser">
+        <input type="hidden" id="gender" value="{{$user->gender}}">
+    </div>
+    <div id="typeOfLift">
+        <input type="hidden" id="liftType" value="{{$lift->name}}">
     </div>
     <div class="jumbotron container">
         <h2>Statistics</h2>
@@ -80,12 +90,18 @@
             </div>
         </div>
         <div class="row">
-            <h4>One Rep Max</h4>
-            <div class="col s12">
+            <div class="col s6">
+                <h4>One Rep Max</h4>
                 <i class="large material-icons">fitness_center</i><h5>1RM from PR and Reps</h5><br />
                 <p class="flow-text" id="orm"></p>
             </div>
+            <div class="col s6">
+                <h4>Strength Level</h4>
+                <i class="large material-icons" id="strengthFace"></i><h5>Your Strength Level is</h5><br />
+                <p class="flow-text" id="strengthRank"></p>
+            </div>
         </div>
+    </div>
     </div>
     @else
         <div id="workout">

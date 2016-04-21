@@ -35,7 +35,8 @@ class WorkoutsController extends Controller
         $lift = \App\Workout::where(['name' => $name])->get()->first();
         $liftCollection = \App\Workout::where(['user_id' => $userName])->get();
         $weight = \Auth::user()->weights()->get()->last();
-        return view('workouts/show', compact('lift', 'user', 'liftCollection', 'weight'));
+        $userWeight = \App\Weight::where(['user_id' => \Auth::user()->id])->get()->last();
+        return view('workouts/show', compact('lift', 'user', 'liftCollection', 'weight','userWeight'));
     }
     /**
      * Add a workout for a user.

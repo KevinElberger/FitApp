@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="fonts/font-awesome.min.css" type="text/css" media="screen">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
     <link href="css/material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link href="css/ripples.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
@@ -22,6 +23,7 @@
     <div class="jumbotron">
         <div class="col-md-12">
             <div class="centered">
+            {{--<div class="valign-wrapper">--}}
                 <div class="text-right">
                     <h1 class="wow wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><b>FitApp - Track and Log Your Workouts</b></h1>
                     <p class="wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">WEB APP DESIGNED TO HELP YOU REACH YOUR GOALS</p>
