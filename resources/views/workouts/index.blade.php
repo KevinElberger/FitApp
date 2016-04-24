@@ -30,7 +30,6 @@
         </ul>
     </div>
 </nav>
-
 <div id="workout"><h1>{{ ucfirst($user->name) }}'s Workouts</h1><br /></div>
 <div class="jumbotron container">
     @include('flash::message')
@@ -39,26 +38,30 @@
     <h3>View Your Lifts</h3>
     <div class="row">
         <div class="col s12 m4">
-            <div class="card blue-grey darken-1">
-                <div class="card-action waves-effect waves-block waves-light">
+            <div class="card">
+                <div onclick="location.href='/workouts/{{ $user->name }}/bench'" class="card-action waves-effect waves-block waves-light teal">
                     <span class="card-title"><a href="/workouts/{{ $user->name }}/bench">Bench</a></span>
                 </div>
             </div><br/>
         </div>
         <div class="col s12 m4">
-            <div class="card blue-grey darken-1">
-                <div class="card-action waves-effect waves-block waves-light">
+            <div class="card teal">
+                <div onclick="location.href='/workouts/{{ $user->name }}/deadlift'" class="card-action waves-effect waves-block waves-light">
                     <span class="card-title"><a href="/workouts/{{ $user->name }}/deadlift">Deadlift</a></span>
                 </div>
             </div><br/>
         </div>
         <div class="col s12 m4">
-            <div class="card blue-grey darken-1">
-                <div class="card-action waves-effect waves-block waves-light">
+            <div class="card teal">
+                <div onclick="location.href='/workouts/{{ $user->name }}/squat'" class="card-action waves-effect waves-block waves-light">
                     <span class="card-title"><a href="/workouts/{{ $user->name }}/squat">Squat</a></span>
                 </div>
             </div>
         </div>
+    </div>
+    <hr />
+    <div id="workoutCreate">
+        <h3>Create A Workout</h3>
     </div>
 </div>
 <script src="/js/jquery-2.1.4.min.js"></script>
@@ -93,7 +96,6 @@
         display: block;
         margin: 0 auto;
     }
-
     #workout {
         text-align: center;
     }
@@ -103,5 +105,11 @@
 
     .container {
         text-align: center;
+    }
+    .card.small .card-image, .card.medium .card-image, .card.large .card-image {
+        max-height: 90%;
+    }
+    .card .card-image {
+        height: 90%;
     }
 </style>

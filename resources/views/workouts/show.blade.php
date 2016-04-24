@@ -38,76 +38,89 @@
         </ul>
     </div>
 </nav>
+<!-- Check to see if user has any recorded lifts -->
 @if(!empty($liftCollection->first()))
+    <!-- If there are lifts -->
     @if(!empty($lift))
-    <div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
-
-
-    <div class="jumbotron container">
-        <h3>Lift Numbers</h3>
-        <hr />
         @foreach($liftCollection as $l)
             @if($l->name == $lift->name)
-            <script>
-                arr.push(["{{ Carbon\Carbon::parse($l->date)->format('m/d/Y') }}", {{ $l->weight }}]);
-                repArr.push([{{$l->weight}},{{$l->reps}}]);
-            </script>
+                <script>
+                    arr.push(["{{ Carbon\Carbon::parse($l->date)->format('m/d/Y') }}", {{ $l->weight }}]);
+                    repArr.push([{{$l->weight}},{{$l->reps}}]);
+                </script>
             @endif
         @endforeach
-        <div id="wrap">
-            <svg id="visualization" width="600" height="400"></svg>
-        </div>
-        <br />
-    </div>
-    <div id="weightOfUser">
-        <input type="hidden" id="weight" value="{{$userWeight->weight}}">
-    </div>
-    <div id="genderOfUser">
-        <input type="hidden" id="gender" value="{{$user->gender}}">
-    </div>
-    <div id="typeOfLift">
-        <input type="hidden" id="liftType" value="{{$lift->name}}">
-    </div>
-    <div class="jumbotron container">
-        <h2>Statistics</h2>
-        <hr />
-        <div class="row">
-            <h4>Highest Lift</h4>
-            <div class="col s6">
-                <i class="large material-icons">trending_up</i><h5>Personal Record</h5><br />
-                <p class="flow-text" id="highestLift"></p>
-            </div>
-            <div class="col s6">
-                <i class="large material-icons">today</i><h5>Achieved On</h5><br />
-                <p class="flow-text" id="highestDay"></p>
-            </div>
-            <div class="col s12">
+        <div id="workout"><h1>{{ ucfirst($user->name) . '\'s ' . ucfirst($lift->name) }}</h1><br /></div>
+        <div class="jumbotron container">
+            <a href="#" class="btn btn-raised btn-primary lgraph">Lift Graph</a>
+            <a href="#" class="btn btn-raised btn-primary sgraph">Strength Graph</a>
+            <div id="liftGraph">
+                <h3>Lift Numbers</h3>
                 <hr />
-                <h4>Lift Progress</h4>
-                <i class="large material-icons">assessment</i><h5>You've Improved By</h5><br />
-                <p class="flow-text" id="improvement"></p>
+                <div id="wrap">
+                    <svg id="visualization" width="600" height="400"></svg>
+                </div>
+                <br />
+            </div>
+            <div id="strengthGraph">
+                <h3>Your Relative Strength</h3>
                 <hr />
+                <div id="wrap">
+                    <svg id="visualization2" width="600" height="400"></svg>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col s6">
-                <h4>One Rep Max</h4>
-                <i class="large material-icons">fitness_center</i><h5>1RM from PR and Reps</h5><br />
-                <p class="flow-text" id="orm"></p>
+        @if(!empty($userWeight))
+            <div id="weightOfUser">
+                <input type="hidden" id="weight" value="{{$userWeight->weight}}">
             </div>
-            <div class="col s6">
-                <h4>Strength Level</h4>
-                <i class="large material-icons" id="strengthFace"></i><h5>Your Strength Level is</h5><br />
-                <p class="flow-text" id="strengthRank"></p>
+        @endif
+        <div id="genderOfUser">
+            <input type="hidden" id="gender" value="{{$user->gender}}">
+        </div>
+        <div id="typeOfLift">
+            <input type="hidden" id="liftType" value="{{$lift->name}}">
+        </div>
+        <div class="jumbotron container">
+            <h2>Statistics</h2>
+            <hr />
+            <div class="row">
+                <h4>Highest Lift</h4>
+                <div class="col s6">
+                    <i class="large material-icons">trending_up</i><h5>Personal Record</h5><br />
+                    <p class="flow-text" id="highestLift"></p>
+                </div>
+                <div class="col s6">
+                    <i class="large material-icons">today</i><h5>Achieved On</h5><br />
+                    <p class="flow-text" id="highestDay"></p>
+                </div>
+                <div class="col s12">
+                    <hr />
+                    <h4>Lift Progress</h4>
+                    <i class="large material-icons">assessment</i><h5>You've Improved By</h5><br />
+                    <p class="flow-text" id="improvement"></p>
+                    <hr />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <h4>One Rep Max</h4>
+                    <i class="large material-icons">fitness_center</i><h5>1RM from PR and Reps</h5><br />
+                    <p class="flow-text" id="orm"></p>
+                </div>
+                <div class="col s6">
+                    <h4>Strength Level</h4>
+                    <i class="large material-icons" id="strengthFace"></i><h5>Your Strength Level is</h5><br />
+                    <p class="flow-text" id="strengthRank"></p>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
-    @else
-        <div id="workout">
-            <h1>There are no lifts of this type recorded yet!</h1>
-            <a href="/workouts/create" class="btn btn-raised btn-primary"><b>Add one here</b></a>
         </div>
+        @else
+            <div id="workout">
+                <h1>There are no lifts of this type recorded yet!</h1>
+                <a href="/workouts/create" class="btn btn-raised btn-primary"><b>Add one here</b></a>
+            </div>
     @endif
 @else
     <div id="workout">
@@ -139,9 +152,11 @@
         display: block;
         margin: 0 auto;
     }
-
     #workout {
         text-align: center;
+    }
+    #strengthGraph {
+        display: none;
     }
     .modal-title {
         text-align: center;
