@@ -4,10 +4,16 @@ $(document).ready(function() {
     improvement();
     oneRepMaxCalculator();
     $('.sgraph').click(function() {
-        // Swaps out different graphs based on the button being pressed.
+        // Swaps out lift graph for strength graph.
         $('#liftGraph').fadeOut('fast', function(e){
             $('#strengthGraph').fadeIn('fast');
             deadliftStrengthGraph();
+        });
+    });
+    $('.lgraph').click(function() {
+        // Swaps out strength graph for lift graph.
+        $('#strengthGraph').fadeOut('fast', function(e){
+            $('#liftGraph').fadeIn('fast');
         });
     });
 });
@@ -286,7 +292,7 @@ function deadliftStrengthGraph() {
         .attr('class', 'd3-tip')
         .offset([-10, 0])
         .html(function(d) {
-            return "<strong>Weight:</strong> <span style='color:teal'>" + d.close + "</span>";
+            return "<strong>Weight:</strong> <span style='color:teal'>" + d.lift + "</span>";
         });
 
     // If user is male, reference male strength table.
@@ -310,7 +316,7 @@ function deadliftStrengthGraph() {
                     yValues[4] = maleDeadlift[j][5];
             }
         }
-
+        // Used to plot the dots on graph.
         var dataset = [
             {"lift": yValues[0], "strength": "untrained"},
             {"lift": yValues[1], "strength": "novice"},
@@ -343,6 +349,7 @@ function deadliftStrengthGraph() {
         yAxis = d3.svg.axis().scale(yScale)
             .orient("left");
 
+        vis.call(tip);
 
         // Orient the x and y axis to proper positions.
         vis.append("g")
@@ -367,28 +374,28 @@ function deadliftStrengthGraph() {
         // First path is untrained to novice.
         var path = vis.append("path")
             .attr("d", line(dataset1))
-            .attr("stroke", "red")
+            .attr("stroke", "#CFF09E")
             .attr("stroke-width", "2")
             .attr("fill", "none");
 
         // Novice to intermediate.
         var path2 = vis.append("path")
             .attr("d", line(dataset2))
-            .attr("stroke", "steelblue")
+            .attr("stroke", "#79BD9A")
             .attr("stroke-width", "2")
             .attr("fill", "none");
 
         // Intermediate to advanced.
         var path3 = vis.append("path")
             .attr("d", line(dataset3))
-            .attr("stroke", "steelblue")
+            .attr("stroke", "#3B8686")
             .attr("stroke-width", "2")
             .attr("fill", "none");
 
         // Advanced to elite.
         var path4 = vis.append("path")
             .attr("d", line(dataset4))
-            .attr("stroke", "green")
+            .attr("stroke", "#0B486B")
             .attr("stroke-width", "2")
             .attr("fill", "none");
 
@@ -437,6 +444,8 @@ function deadliftStrengthGraph() {
             .attr("class", "dot")
             .attr("cx", line.x())
             .attr("cy", line.y())
-            .attr("r", 3.5);
+            .attr("r", 3.5)
+            .on('mouseover', tip.show)
+            .on('mouseout', tip.hide);
     }
 }

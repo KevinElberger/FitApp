@@ -51,4 +51,12 @@ class PagesController extends Controller
         return redirect('workouts/index');
     }
 
+    /**
+     * Page used for COMP 484 Lab 7.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function employee() {
+        return view('pages/employee');
+    }
 }

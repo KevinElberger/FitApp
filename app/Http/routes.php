@@ -1,5 +1,6 @@
 <?php
 Route::get('/', 'PagesController@index');
+Route::get('/pages/employee', 'PagesController@employee');
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
