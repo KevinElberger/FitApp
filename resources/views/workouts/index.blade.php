@@ -20,10 +20,8 @@
 <nav>
     <div class="nav-wrapper teal">
         <ul>
-            <li><a href="">Home</a></li>
             <li><a href="/workouts/index">Workouts</a></li>
             <li><a href="/pages/weight">Weight</a></li>
-            <li><a href="">Contact</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
             <li><a href="/logout">Logout</a></li>
@@ -58,10 +56,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <hr />
-    <div id="workoutCreate">
-        <h3>Create A Workout</h3>
     </div>
 </div>
 <script src="/js/jquery-2.1.4.min.js"></script>
