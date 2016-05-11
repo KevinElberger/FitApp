@@ -18,6 +18,11 @@ $(document).ready(function() {
     });
 });
 
+// Sort the array's dates in order from oldest to newest.
+function sortArr(a, b) {
+    return Date.parse(a) - Date.parse(b);
+};
+
 function initialize() {
     // This command is used to initialize some elements and make them work properly.
     $.material.init();
@@ -28,12 +33,8 @@ function initialize() {
     for(var i=0; i<arr.length; i++) {
         newArr.push(arr[i]);
     }
-    // Sort the array's dates in order from oldest to newest.
-    newArr.sort(function(a, b) {
-        return Date.parse(a) - Date.parse(b);
-    });
     for (var x=0; x<newArr.length;x++) {
-        newArr.sort(newArr[x],newArr[x+1]);
+        sortArr(newArr[x], newArr[x+1]);
     }
 
     // Start and end dates for the line graph.
